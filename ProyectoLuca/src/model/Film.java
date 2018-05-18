@@ -1,5 +1,7 @@
 package model;
 
+import model.TypeGenre;
+
 public class Film {
 private String tittle;
 private String director;
