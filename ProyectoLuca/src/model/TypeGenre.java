@@ -17,4 +17,8 @@ public enum TypeGenre {
 		this.description = description;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+
 }
