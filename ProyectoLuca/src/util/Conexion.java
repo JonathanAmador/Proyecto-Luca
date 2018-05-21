@@ -18,6 +18,7 @@ public class Conexion {
 			String password = "1111";
 
 			Class.forName(driverClassName);
+			System.out.println("Pasa por aqui");
 			con = DriverManager.getConnection(driverUrl, user, password);
 			return con;
 		}catch (Throwable ex) {
