@@ -9,21 +9,21 @@
       <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
    </head>
    <body>
-      <header>
-         <div class="topnav">
-            <h1>Pelis<span>Online</span></h1>
-            <div class="search-container">
-               <form action="/action_page.php">
-                  <input type="text" placeholder="Busca tu pelicula por titulo o director..." name="search" size="50">
-                  <input id="buscar" type="submit" id="button-search" value="Buscar"> 
-               </form>
-               <a id="advsearch" href="advsearch.html">Busqueda avazada</a>
-            </div>
-         </div>
-         
-         
-         
-      </header>
+ <header>
+
+    <div class="topnav">
+        <h1>Pelis<span>Online</span></h1>
+  <div class="search-container">
+      
+    <form method="POST" action="/FilmListSelect.do">
+      <input type="text" placeholder="Busca tu pelicula por titulo o director..." name="search" size="50">
+      <input id="buscar" type="submit" id="button-search" value="Buscar">
+      
+    </form>
+     
+</div>
+    </div>
+</header>
       <div style="overflow:auto">
          <div class="menu">
             <a href="#"><strong>Accion</strong></a>
@@ -42,7 +42,7 @@
                   <div class="fa-shadow" id="adv-search-container">
                      <div id="adv-search-main-title"><b>BUSCADOR AVANZADO</b><span> (Buscar en los campos que selecciones)</span></div>
                      <div id="adv-search-filter-container">
-                        <form method="POST" action="advsearch.do">
+                        <form method="POST" action="/FilmListSelect.do">
                            <div id="text-option-container" class="form-section">
                               <!--<div class="title-filter">
                                  Texto:                    
@@ -67,16 +67,15 @@
 									<div>
 										<select name="genre">
 											<option value="">-Todos los géneros-</option>
-											<option value="AC">Acción</option>
-											<option value="AN">Ación</option>
-											<option value="AV">Animación</option>
-											<option value="C-F">Ciencia ficción</option>
-											<option value="CO">Comédia</option>
-											<option value="DR">Drama</option>
-											<option value="DO">Documentál</option>
-											<option value="FAN">Fantástico</option>
-											<option value="TE">Terror</option>
-											<option value="TH">Thriller</option>
+											<option value="ACTION">Acción</option>
+											<option value="ANIMATION">Animación</option>
+											<option value="AVENTURE">Aventura</option>
+											<option value="SCIENCE">Ciencia ficción / Fantástico</option>
+											<option value="COMEDY">Comédia</option>
+											<option value="DRAMA">Drama</option>
+											<option value="DOCUMENTARY">Documentál</option>
+											<option value="TERROR">Terror</option>
+											<option value="THRILLER">Thriller</option>
 										</select>
 									</div>
 								</div>

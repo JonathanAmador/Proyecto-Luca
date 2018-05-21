@@ -19,7 +19,7 @@ import java.util.*;
 
 @WebServlet(
         name = "FilmListSelect",
-        urlPatterns = {"/advsearch.do"},
+        urlPatterns = {"/FilmListSelect.do"},
         asyncSupported = false
 )
 public class FilmListSelect extends HttpServlet{
@@ -40,7 +40,15 @@ public class FilmListSelect extends HttpServlet{
 					genre = a;
 				}
 			}   
-	        int year = Integer.parseInt(request.getParameter("year"));
+			
+			int year=0;
+			/*
+			if(request.getParameter("year") != ""){
+				year = Integer.parseInt(request.getParameter("year")) ;
+			}else{
+				year = 0;
+			}*/
+	        
 	        
 	       
 	        List<Film> result = filmService.showListFilm(title, director, genre, year);
