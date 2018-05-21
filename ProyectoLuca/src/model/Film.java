@@ -14,7 +14,6 @@ public class Film {
 	}
 
 	public Film(String tittle, String director, String synopsis, float price, int year, TypeGenre genre, String image) {
-		super();
 		this.tittle = tittle;
 		this.director = director;
 		this.synopsis = synopsis;
