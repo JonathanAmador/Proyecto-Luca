@@ -68,12 +68,12 @@
 										<select name="genre">
 											<option value="">-Todos los géneros-</option>
 											<option value="AC">Acción</option>
-											<option value="AN">Acion</option>
-											<option value="AV">Animacion</option>
+											<option value="AN">Ación</option>
+											<option value="AV">Animación</option>
 											<option value="C-F">Ciencia ficción</option>
-											<option value="CO">Comedia</option>
+											<option value="CO">Comédia</option>
 											<option value="DR">Drama</option>
-											<option value="DO">Documental</option>
+											<option value="DO">Documentál</option>
 											<option value="FAN">Fantástico</option>
 											<option value="TE">Terror</option>
 											<option value="TH">Thriller</option>
