@@ -18,7 +18,7 @@ import services.IFilmService;
 import java.util.*;
 
 @WebServlet(
-        name = "FilmSelect",
+        name = "FilmListSelect",
         urlPatterns = {"/advsearch.do"},
         asyncSupported = false
 )
@@ -45,7 +45,7 @@ public class FilmListSelect extends HttpServlet{
 	       
 	        List<Film> result = filmService.showListFilm(title, director, genre, year);
 	        
-	        request.setAttribute("lisFilm", result);
+	        request.setAttribute("listFilm", result);
 	        
 	        //PASO 03: Salir      
 	        RequestDispatcher view = request.getRequestDispatcher("ListFilm.jsp");
