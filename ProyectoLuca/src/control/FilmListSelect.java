@@ -22,7 +22,7 @@ import java.util.*;
         urlPatterns = {"/advsearch.do"},
         asyncSupported = false
 )
-public class FilmSelect extends HttpServlet{
+public class FilmListSelect extends HttpServlet{
 
 	
 		private static final long serialVersionUID = 1L;
