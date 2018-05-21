@@ -8,12 +8,13 @@ public class Film {
 	private int year;
 	private TypeGenre genre;
 	private String image;
+	private String duration;
 
 	public Film() {
 		super();
 	}
 
-	public Film(String tittle, String director, String synopsis, float price, int year, TypeGenre genre, String image) {
+	public Film(String tittle, String director, String synopsis, float price, int year, TypeGenre genre, String image, String duration) {
 		super();
 		this.tittle = tittle;
 		this.director = director;
@@ -22,6 +23,7 @@ public class Film {
 		this.year = year;
 		this.genre = genre;
 		this.image = image;
+		this.duration=duration;
 	}
 
 	public String getTittle() {
@@ -79,11 +81,18 @@ public class Film {
 	public void setImage(String image) {
 		this.image = image;
 	}
+	public String getDuration() {
+		return duration;
+	}
+
+	public void setDuration(String duration) {
+		this.duration = duration;
+	}
 
 	@Override
 	public String toString() {
 		return "Película\n [ -Título=" + tittle + "\n-Director=" + director + "\n-Sinópsis=" + synopsis + "\n-Precio="
-				+ price + "\n-Año=" + year + "\n-Imagen=" + image + "]";
+				+ price + "\n-Año=" + year + "\n-Imagen=" + image + "\n-Duración="+duration+ "]";
 	}
 
 }
