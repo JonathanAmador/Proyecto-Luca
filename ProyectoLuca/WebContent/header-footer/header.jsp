@@ -19,12 +19,12 @@
         <h1>Pelis<span>Online</span></h1>
   <div class="search-container">
       
-    <form action="search">
-      <input type="text" placeholder="Busca tu pelicula por titulo o director..." name="search" size="50">
-      <input id="buscar" type="submit" id="button-search" value="Buscar">
+    <form method="POST" action="FilmListSelect.do">
+      <input type="text" placeholder="Busca tu pelicula por titulo o director..." name="title" size="50" />
+      <input id="buscar" type="submit" value="Buscar" />
       
     </form>
-      <a href="advsearch.html" class="id" id="advsearch">Busqueda avazada</a>
+      <a href="advsSearch.jsp" class="id" id="advsearch">Busqueda avazada</a>
 </div>
     </div>
 </header>

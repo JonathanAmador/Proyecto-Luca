@@ -11,10 +11,10 @@
 	<var="film" items="${film}">
 	<h1>${film.title}</h1>
 	<h3>${film.director}</h3>
-	<h3>${film.genre.toString()}</h3>
+	<h3>${film.genre.description}</h3>
 	<h3>${film.year}</h3>
 	<h3>${film.duration}</h3>
-	
+	<image src = "${film.image}" >
 	<p>${film.synopsis}</p>
 	<h4>${film.price}</h4> 
 	<!-- <p><input type = "submit" value="Añadir carrito"/></p>-->

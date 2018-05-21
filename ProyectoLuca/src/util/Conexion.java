@@ -16,13 +16,14 @@ public class Conexion {
 			String driverUrl = "jdbc:mysql://10.90.36.17:3306/bd_film";
 			String user = "super";
 			String password = "1111";
-
 			Class.forName(driverClassName);
-			System.out.println("Pasa por aqui");
+			
+			
 			con = DriverManager.getConnection(driverUrl, user, password);
 			return con;
 		}catch (Throwable ex) {
 			System.err.println("Initial SessionFactory creation failed." + ex);
+			System.out.println("ERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRORRRRRRRRRRRRRRRRRRRRRRRRRRRR");
 			throw new ExceptionInInitializerError(ex);
 		}
 	}
@@ -32,7 +33,8 @@ public class Conexion {
     }
 	
 	public static Statement openStatement() throws SQLException {
-		if (con==null) connectDB();
+		if (con==null)connectDB();
+
         return con.createStatement();
     }
 	

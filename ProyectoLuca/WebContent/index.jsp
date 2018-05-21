@@ -8,21 +8,9 @@
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
-<header>
+<header> <%@include file="header-footer/header.jsp"%>
+	</header>
 
-    <div class="topnav">
-        <h1>Pelis<span>Online</span></h1>
-  <div class="search-container">
-      
-    <form method="POST" action="FilmListSelect.do">
-      <input type="text" placeholder="Busca tu pelicula por titulo o director..." name="search" size="50">
-      <input id="buscar" type="submit" id="button-search" value="Buscar">
-      
-    </form>
-      <a href="advsSearch.jsp" class="id" id="advsearch">Busqueda avazada</a>
-</div>
-    </div>
-</header>
 <nav>
 <div style="overflow:auto">
   <div class="menu">

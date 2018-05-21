@@ -15,7 +15,7 @@
         <h1>Pelis<span>Online</span></h1>
   <div class="search-container">
       
-    <form method="POST" action="/FilmListSelect.do">
+    <form method="POST" action="FilmListSelect.do">
       <input type="text" placeholder="Busca tu pelicula por titulo o director..." name="search" size="50">
       <input id="buscar" type="submit" id="button-search" value="Buscar">
       
@@ -42,7 +42,7 @@
                   <div class="fa-shadow" id="adv-search-container">
                      <div id="adv-search-main-title"><b>BUSCADOR AVANZADO</b><span> (Buscar en los campos que selecciones)</span></div>
                      <div id="adv-search-filter-container">
-                        <form method="POST" action="/FilmListSelect.do">
+                        <form method="POST" action="FilmListSelect.do">
                            <div id="text-option-container" class="form-section">
                               <!--<div class="title-filter">
                                  Texto:                    

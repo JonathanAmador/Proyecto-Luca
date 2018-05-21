@@ -19,11 +19,13 @@ public class DataFilm implements IDataFilm {
 			Statement sentencia = Conexion.openStatement();
 			synchronized (sentencia) {
 				// Cogemos todos los datos de las películas
-				if(year == 0){
+				System.out.println(title);
+				result = sentencia.executeQuery("SELECT * FROM bd_film.film where Title like '%"+title+"%' ;");
+				/* if(year == 0){
 					result = sentencia.executeQuery("SELECT * FROM bd_film.film where Title like '%"+title+"%' and Director like '%"+director+"%' and Genre like '%"+genre+"%';");
 				}else{
 					result = sentencia.executeQuery("SELECT * FROM bd_film.film where Title like '%"+title+"%' and Director like '%"+director+"%' and Year like '%"+year+"%' and Genre like '%"+genre+"%';");
-				}
+				}*/
 			}
 			if (!result.next()) {
 				return null;
@@ -39,7 +41,7 @@ public class DataFilm implements IDataFilm {
 						}
 					}
 					listFilm.add(new Film(result.getInt(1), result.getString(2), result.getString(3), result.getString(4),
-							result.getFloat(5), result.getInt(6), genre1, result.getString(8), result.getString(9)));
+							result.getFloat(5), result.getInt(6), genre1, result.getString(8),result.getString(9)));
 				}
 
 			}

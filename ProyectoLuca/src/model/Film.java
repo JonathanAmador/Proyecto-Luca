@@ -2,7 +2,7 @@ package model;
 
 public class Film {
 	private int idFilm;
-	private String tittle;
+	private String title;
 	private String director;
 	private String synopsis;
 	private float price;
@@ -17,12 +17,12 @@ public class Film {
 
 
 	
-	public Film(int idFilm, String tittle, String director, String synopsis, float price, int year, TypeGenre genre,
+	public Film(int idFilm, String title, String director, String synopsis, float price, int year, TypeGenre genre,
 			String image, String duration) {
 
 		super();
 		this.idFilm = idFilm;
-		this.tittle = tittle;
+		this.title = title;
 		this.director = director;
 		this.synopsis = synopsis;
 		this.price = price;
@@ -42,12 +42,12 @@ public class Film {
 	}
 
 
-	public String getTittle() {
-		return tittle;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setTittle(String tittle) {
-		this.tittle = tittle;
+	public void setTitle(String tittle) {
+		this.title = tittle;
 	}
 
 	public String getDirector() {
@@ -108,7 +108,7 @@ public class Film {
 	@Override
 	public String toString() {
 
-		return "Film [idFilm=" + idFilm + ", tittle=" + tittle + ", director=" + director + ", synopsis=" + synopsis
+		return "Film [idFilm=" + idFilm + ", title=" + title + ", director=" + director + ", synopsis=" + synopsis
 				+ ", price=" + price + ", year=" + year + ", genre=" + genre + ", image=" + image +"\n-Duración="+duration+  "]";
 
 	}

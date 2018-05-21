@@ -19,7 +19,11 @@ import services.IFilmService;
 /**
  * Servlet implementation class FilmSelect
  */
-@WebServlet("/FilmSelect")
+@WebServlet(
+        name = "FilmSelect",
+        urlPatterns = {"/FilmSelect.do"},
+        asyncSupported = false
+)
 public class FilmSelect extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private IFilmService filmService = new FilmService();
@@ -28,8 +32,14 @@ public class FilmSelect extends HttpServlet {
             throws ServletException, IOException, SQLException {
     	
     	//PASO 01: Recoger informacion
-        int id = Integer.parseInt(request.getParameter("id"));
-        id = 2;
+        int id = 0 ;
+        if(request.getParameter("id")!= null){
+        	id = Integer.parseInt(request.getParameter("id"));
+        }
+        else{
+        	System.out.println("ERRRRRRRRRRRRRRRRRRRRRRORRRRRRRRRRRRRRRRR dato vacio");
+        }
+        
         Film result =filmService.showFilm(id);
         
         request.setAttribute("film", result);

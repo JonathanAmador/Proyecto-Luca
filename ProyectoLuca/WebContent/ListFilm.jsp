@@ -27,74 +27,13 @@
 		<!-- First row  -->
 <ul>
 <c:forEach var="film" items="${listFilm}">
-	<li>${film.title} </li>
-	<li>${film.price}</li> 
+	<form method="POST" action="FilmSelect.do"><li>${film.title} </li>
+	<button name="id" value="${film.idFilm}"><image src = "${film.image}" ></button>
+	<li>${film.price}</li> </form>
 	<!-- <p><input type = "submit" value="Añadir carrito"/></p>-->
 	</c:forEach>
 </ul>
 
-
-
-		<div class="row">
-			<h2 style="padding: 0px 0px 0px 20px">Lista de peliculas</h2>
-			<div class="column">
-				<img class="column"
-					src="https://pics.filmaffinity.com/deadpool_2-173899450-mmed.jpg"
-					style="width: 100%"> <a href="">Nombre de pelicula </a>
-			</div>
-			<div class="column">
-				<img class="column"
-					src="https://pics.filmaffinity.com/deadpool_2-173899450-mmed.jpg"
-					style="width: 100%"> <a href="">Nombre de pelicula </a>
-			</div>
-			<div class="column">
-				<img class="column"
-					src="https://pics.filmaffinity.com/deadpool_2-173899450-mmed.jpg"
-					style="width: 100%"> <a href="">Nombre de pelicula </a>
-			</div>
-		</div>
-
-		<!-- Second row  -->
-
-		<div class="row">
-			<div class="column">
-				<img class="column"
-					src="https://pics.filmaffinity.com/deadpool_2-173899450-mmed.jpg"
-					style="width: 100%"> <a href="">Nombre de pelicula </a>
-			</div>
-			<div class="column">
-				<img class="column"
-					src="https://pics.filmaffinity.com/deadpool_2-173899450-mmed.jpg"
-					style="width: 100%"> <a href="">Nombre de pelicula </a>
-			</div>
-			<div class="column">
-				<img class="column"
-					src="https://pics.filmaffinity.com/deadpool_2-173899450-mmed.jpg"
-					style="width: 100%"> <a href="">Nombre de pelicula </a>
-			</div>
-		</div>
-
-		<!-- Third row  -->
-
-		<div class="row">
-			<div class="column">
-				<img class="column"
-					src="https://pics.filmaffinity.com/deadpool_2-173899450-mmed.jpg"
-					style="width: 100%"> <a href="">Nombre de pelicula </a>
-			</div>
-			<div class="column">
-				<img class="column"
-					src="https://pics.filmaffinity.com/deadpool_2-173899450-mmed.jpg"
-					style="width: 100%"> <a href="">Nombre de pelicula </a>
-			</div>
-			<div class="column">
-				<img class="column"
-					src="https://pics.filmaffinity.com/deadpool_2-173899450-mmed.jpg"
-					style="width: 100%"> <a href="">Nombre de pelicula </a>
-			</div>
-		</div>
-
-	</div>
 	</main>
 
 	<div class="right">
