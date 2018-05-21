@@ -1,9 +1,10 @@
+<%@ page import="java.util.*"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
@@ -18,7 +19,7 @@
       <input id="buscar" type="submit" id="button-search" value="Buscar">
       
     </form>
-      <a href="advsearch.html" class="id" id="advsearch">Busqueda avazada</a>
+      <a href="advsearch.jsp" class="id" id="advsearch">Busqueda avazada</a>
 </div>
     </div>
 </header>
@@ -100,7 +101,7 @@
   </div>
 </div>
 
-<div style="background-color:#e6b800;text-align:center;padding:10px;margin-top:7px;">Â© Proyecto LucaTic Grupo A</div>
+<div style="background-color:#e6b800;text-align:center;padding:10px;margin-top:7px;">© Proyecto LucaTic Grupo A</div>
 
 </body>
 </html>

@@ -76,3 +76,9 @@ clear:both;
 margin:0;
 padding:0 0 15px;
 }
+
+@media screen and (max-width: 600px) {
+    input{
+        width: 100%;
+    }
+}

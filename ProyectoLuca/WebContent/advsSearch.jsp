@@ -1,71 +1,11 @@
+<%@ page import="java.util.*"%>
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="styleadvsearch.css">
-<link rel="stylesheet"
-	href="path/to/font-awesome/css/font-awesome.min.css">
-</head>
-<body>
-	<header>
-		<div class="topnav">
-			<h1>
-				Pelis<span>Online</span>
-			</h1>
-			<div class="search-container">
-				<form action="/action_page.php">
-					<input type="text"
-						placeholder="Busca tu pelicula por titulo o director..."
-						name="search" size="50"> <input id="buscar" type="submit"
-						id="button-search" value="Buscar">
-				</form>
-				<a id="advsearch" href="advsearch.html">Busqueda avazada</a>
-			</div>
-		</div>
-	</header>
-	<div style="overflow: auto">
-		<div class="menu">
-			<a href="#"><strong>Accion</strong></a> 
-			<a href="#"><strong>Animacion</strong></a>
-			<a href="#"><strong>Ciencia Ficcion</strong></a> 
-			<a href="#"><strong>Comedia</strong></a>
-			<a href="#"><strong>Drama</strong></a> 
-			<a href="#"><strong>Documentales</strong></a>
-			<a href="#"><strong>Terror</strong></a> 
-			<a href="#"><strong>Thriller</strong></a>
-		</div>
-		<main> <!-- Photo Grid -->
-		<div class="main">
-			<div id="main-adv-search-wrapper">
-				<div class="fa-shadow" id="adv-search-container">
-					<div id="adv-search-main-title">
-						<b>BUSCADOR AVANZADO</b><span> (Buscará en los campos que
-							selecciones)</span>
-					</div>
-					<div id="adv-search-filter-container">
-						<form action="advsearch">
-							<div id="text-option-container" class="form-section">
-								<!--<div class="title-filter">
-                                 Texto:                    
-                              </div>-->
-								<div>
-									<p>
-										<label for="">Titulo </label>
-									</p>
-									<input type="text" placeholder="Busca tu pelicula ..."
-										name="search" size="50">
-									<p>
-										<label for="">Director </label>
-									</p>
-									<input type="text" placeholder="Busca tu pelicula ..."
-										name="search" size="50">
-=======
-   <head>
+<meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="style.css">
-      <link rel="stylesheet" href="styleadvsearch.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/styleadvsearch.css">
       <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
    </head>
    <body>
@@ -80,6 +20,9 @@
                <a id="advsearch" href="advsearch.html">Busqueda avazada</a>
             </div>
          </div>
+         
+         
+         
       </header>
       <div style="overflow:auto">
          <div class="menu">
@@ -97,7 +40,7 @@
             <div class="main">
                <div id="main-adv-search-wrapper">
                   <div class="fa-shadow" id="adv-search-container">
-                     <div id="adv-search-main-title"><b>BUSCADOR AVANZADO</b><span> (Buscará en los campos que selecciones)</span></div>
+                     <div id="adv-search-main-title"><b>BUSCADOR AVANZADO</b><span> (Buscar en los campos que selecciones)</span></div>
                      <div id="adv-search-filter-container">
                         <form method="POST" action="advsearch.do">
                            <div id="text-option-container" class="form-section">
@@ -109,7 +52,6 @@
                                  <input name="title" type="text" placeholder="Busca tu pelicula ..." name="search" size="50">
                                  <p><label for="">Director </label></p>
                                  <input name="director" type="text" placeholder="Busca tu pelicula ..." name="search" size="50">
->>>>>>> a33c5d10a530947f7f2b456b001ddfdb29f8cf0b
 
 								</div>
 								<!--  <div>
@@ -121,7 +63,7 @@
 							</div>
 							<div id="genre-country-container" class="form-section">
 								<div id="genre-container">
-									<div class="title-filter">Género:</div>
+									<div class="title-filter">G�nero:</div>
 									<div>
 										<select name="genre">
 											<option value="">-Todos los géneros-</option>
@@ -141,35 +83,9 @@
 							</div>
 							<div id="year-container" class="form-section">
 								<div>
-									<div class="title-filter">Año:</div>
+									<div class="title-filter">A�o:</div>
 									<div id="from-year-container">
-										desde <select name="fromyear">
-											<option value="">- - - -</option>
-											<option>2020</option>
-											<option>2019</option>
-											<option>2018</option>
-											<option>2017</option>
-											<option>2016</option>
-											<option>2015</option>
-											<option>2014</option>
-											<option>2013</option>
-											<option>2012</option>
-											<option>2011</option>
-											<option>2010</option>
-											<option>2009</option>
-											<option>2008</option>
-											<option>2007</option>
-											<option>2006</option>
-											<option>2005</option>
-											<option>2004</option>
-											<option>2003</option>
-											<option>2002</option>
-											<option>2001</option>
-											<option>2000</option>
-										</select>
-									</div>
-									<div id="to-year-container">
-										hasta <select name="toyear">
+										<select name="year">
 											<option value="">- - - -</option>
 											<option>2020</option>
 											<option>2019</option>
