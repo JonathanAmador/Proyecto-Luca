@@ -66,15 +66,15 @@
 									<div class="title-filter">GÈnero:</div>
 									<div>
 										<select name="genre">
-											<option value="">-Todos los g√©neros-</option>
-											<option value="AC">Acci√≥n</option>
+											<option value="">-Todos los gÈneros-</option>
+											<option value="AC">AcciÛn</option>
 											<option value="AN">Acion</option>
 											<option value="AV">Animacion</option>
-											<option value="C-F">Ciencia ficci√≥n</option>
+											<option value="C-F">Ciencia ficciÛn</option>
 											<option value="CO">Comedia</option>
 											<option value="DR">Drama</option>
 											<option value="DO">Documental</option>
-											<option value="FAN">Fant√°stico</option>
+											<option value="FAN">Fant·stico</option>
 											<option value="TE">Terror</option>
 											<option value="TH">Thriller</option>
 										</select>
