@@ -1,6 +1,7 @@
 package control;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,14 +10,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Film;
+import model.TypeGenre;
 import services.FilmService;
 import services.IFilmService;
 
 import java.util.*;
 
 @WebServlet(
-        name = "",
-        urlPatterns = {""},
+        name = "FilmSelect",
+        urlPatterns = {"/advsearch.do"},
         asyncSupported = false
 )
 public class FilmSelect extends HttpServlet{
@@ -26,22 +29,26 @@ public class FilmSelect extends HttpServlet{
 		private IFilmService filmService = new FilmService();
 
 	    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-	            throws ServletException, IOException {
+	            throws ServletException, IOException, SQLException {
 	    	
 	    	//PASO 01: Recoger informacion
-	    	int idFilm = Integer.parseInt(request.getParameter("idFilm"));
 	        String title = request.getParameter("title");
 	        String director = request.getParameter("director");
-	        //categoria
+	        TypeGenre genre = TypeGenre.ACTION;
+			for (TypeGenre a : TypeGenre.values()) {
+				if (a.toString() ==  request.getParameter("genre")) {
+					genre = a;
+				}
+			}   
 	        int year = Integer.parseInt(request.getParameter("year"));
 	        
 	       
-	        List<Film> result = filmService.showListFilm(titulo, director, genre, year)
+	        List<Film> result = filmService.showListFilm(title, director, genre, year);
 	        
-	        request.setAttribute("styles", result);
+	        request.setAttribute("lisFilm", result);
 	        
 	        //PASO 03: Salir      
-	        RequestDispatcher view = request.getRequestDispatcher("result.jsp");
+	        RequestDispatcher view = request.getRequestDispatcher("ListFilm.jsp");
 	        view.forward(request, response);
 	        //request.getRequestDispatcher("result.jsp").forward(request, response);
 	        
@@ -58,7 +65,11 @@ public class FilmSelect extends HttpServlet{
 	    @Override
 	    protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	            throws ServletException, IOException {
-	        processRequest(request, response);
+	        try {
+				processRequest(request, response);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 	    }
 
 	    /** 
@@ -71,7 +82,11 @@ public class FilmSelect extends HttpServlet{
 	    @Override
 	    protected void doPost(HttpServletRequest request, HttpServletResponse response)
 	            throws ServletException, IOException {
-	        processRequest(request, response);
+	        try {
+				processRequest(request, response);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 	    }
 
 	    /** 
