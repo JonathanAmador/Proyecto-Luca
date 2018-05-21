@@ -3,7 +3,7 @@ package model;
 public enum TypeGenre {
 	
 	ACTION("Acción/Aventuras "),
-	CIENCE("Ciencia Ficción/Fantástico"),
+	SCIENCE("Ciencia Ficción/Fantástico"),
 	COMEDY("Comedia"),
 	DRAMA("Drama"),
 	ANIMATION("Animación"),
