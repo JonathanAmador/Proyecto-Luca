@@ -2,12 +2,8 @@ package util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class Conexion {
 
@@ -33,6 +29,7 @@ public class Conexion {
 	public static void Connection() throws SQLException {
 		if (con==null) connectDB();        
     }
+	
 	public static Statement openStatement() throws SQLException {
 		if (con==null) connectDB();
         return con.createStatement();
