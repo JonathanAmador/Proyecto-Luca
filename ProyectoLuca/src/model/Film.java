@@ -1,6 +1,7 @@
 package model;
 
 public class Film {
+	private int idFilm;
 	private String tittle;
 	private String director;
 	private String synopsis;
@@ -14,8 +15,15 @@ public class Film {
 		super();
 	}
 
+<<<<<<< HEAD
 	public Film(String tittle, String director, String synopsis, float price, int year, TypeGenre genre, String image, String duration) {
+=======
+	
+	public Film(int idFilm, String tittle, String director, String synopsis, float price, int year, TypeGenre genre,
+			String image) {
+>>>>>>> a33c5d10a530947f7f2b456b001ddfdb29f8cf0b
 		super();
+		this.idFilm = idFilm;
 		this.tittle = tittle;
 		this.director = director;
 		this.synopsis = synopsis;
@@ -25,6 +33,16 @@ public class Film {
 		this.image = image;
 		this.duration=duration;
 	}
+
+	public int getIdFilm() {
+		return idFilm;
+	}
+
+
+	public void setIdFilm(int idFilm) {
+		this.idFilm = idFilm;
+	}
+
 
 	public String getTittle() {
 		return tittle;
@@ -91,8 +109,13 @@ public class Film {
 
 	@Override
 	public String toString() {
+<<<<<<< HEAD
 		return "Película\n [ -Título=" + tittle + "\n-Director=" + director + "\n-Sinópsis=" + synopsis + "\n-Precio="
 				+ price + "\n-Año=" + year + "\n-Imagen=" + image + "\n-Duración="+duration+ "]";
+=======
+		return "Film [idFilm=" + idFilm + ", tittle=" + tittle + ", director=" + director + ", synopsis=" + synopsis
+				+ ", price=" + price + ", year=" + year + ", genre=" + genre + ", image=" + image + "]";
+>>>>>>> a33c5d10a530947f7f2b456b001ddfdb29f8cf0b
 	}
 
 }
