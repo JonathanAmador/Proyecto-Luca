@@ -15,7 +15,7 @@
 <body>
 <header>
 
-    <div class="topnav">
+  <div class="topnav">
         <h1>Pelis<span>Online</span></h1>
   <div class="search-container">
       
@@ -25,9 +25,25 @@
       
     </form>
       <a href="advsSearch.jsp" class="id" id="advsearch">Busqueda avazada</a>
-</div>
-    </div>
+   </div>
+   </div>
+    
 </header>
-
+    
+  <nav>
+	<div style="overflow:auto">
+	  <div class="menu">
+	    <a href="#"><strong>Accion</strong></a>
+	    <a href="#"><strong>Animacion</strong></a>
+	    <a href="#"><strong>Ciencia Ficcion</strong></a>
+	    <a href="#"><strong>Comedia</strong></a>
+	    <a href="#"><strong>Drama</strong></a>
+	    <a href="#"><strong>Documentales</strong></a>
+	    <a href="#"><strong>Terror</strong></a>
+	    <a href="#"><strong>Thriller</strong></a>
+	  </div>
+	  </div>
+  </nav>
 </body>
+
 </html>

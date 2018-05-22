@@ -11,19 +11,7 @@
 <header> <%@include file="header-footer/header.jsp"%>
 	</header>
 
-<nav>
-<div style="overflow:auto">
-  <div class="menu">
-    <a href="#"><strong>Accion</strong></a>
-    <a href="#"><strong>Animacion</strong></a>
-    <a href="#"><strong>Ciencia Ficcion</strong></a>
-    <a href="#"><strong>Comedia</strong></a>
-    <a href="#"><strong>Drama</strong></a>
-    <a href="#"><strong>Documentales</strong></a>
-    <a href="#"><strong>Terror</strong></a>
-    <a href="#"><strong>Thriller</strong></a>
-  </div>
-  </nav>
+
 <main>
 
   <!-- Main  -->
