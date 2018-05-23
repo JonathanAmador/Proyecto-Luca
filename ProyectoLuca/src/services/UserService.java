@@ -27,8 +27,13 @@ private IDataUser dataUser= new DataUser();
 	}
 
 	@Override
-	public boolean checkMail(String Mail) throws SQLException {
-		return dataUser.checkMail(Mail);
+	public boolean checkMail(String mail) throws SQLException {
+		return dataUser.checkMail(mail);
+	}
+
+	@Override
+	public User checkUser(String mail, String pass) throws SQLException {
+		return dataUser.checkUser(mail, pass);
 	}
 }
 

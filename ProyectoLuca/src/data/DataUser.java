@@ -111,7 +111,7 @@ public class DataUser implements IDataUser {
 				isMail = false;
 			} else {
 				result.beforeFirst();
-				while (result.next() || isMail == true) {
+				while (result.next() && isMail == false) {
 					if (mail == result.getString(4)) {
 						isMail = true;
 					}
@@ -132,8 +132,9 @@ public class DataUser implements IDataUser {
 	}
 
 	@Override
-	public boolean checkUser(String user, String mail) throws SQLException {
+	public User checkUser(String mail, String pass) throws SQLException {
 		boolean isUser = false;
+		User user = null;
 		ResultSet result = null;// Objeto para guardar los resultados
 		try {
 			Statement sentencia = Conexion.openStatement();
@@ -141,12 +142,13 @@ public class DataUser implements IDataUser {
 				result = sentencia.executeQuery("SELECT * FROM bd_film.user;");
 			}
 			if (!result.next()) {
-				isUser = false;
+				return null;
 			} else {
 				result.beforeFirst();
-				while (result.next() || isUser == true) {
-					if (user==result.getString(2) && mail == result.getString(4)) {
+				while (result.next() && isUser == true) {
+					if (mail==result.getString(4) && pass == result.getString(5)) {
 						isUser = true;
+						user = new User(result.getInt(1),result.getString(2),result.getString(3),result.getString(4),result.getString(5),result.getString(6),result.getInt(7));
 					}
 				}
 			}
@@ -161,7 +163,7 @@ public class DataUser implements IDataUser {
 				}
 			}
 		}
-		return isUser;
+		return user;
 	}
 
 }
