@@ -58,7 +58,7 @@
 				<div class="pull-left">
 					<!-- Logo -->
 					<div class="header-logo">
-						<a class="logo" href="#">
+						<a class="logo" href="index.jsp">
 							<h1>Movie<span style="color: orangered">Hunter</span></h1>
 						</a>
 					</div>
@@ -86,7 +86,7 @@
 								</div>
 								<strong class="text-uppercase">Mi cuenta <i class="fa fa-caret-down"></i></strong>
 							</div>
-							<a href="#" class="text-uppercase">Inicio</a> / <a href="#" class="text-uppercase">unete</a>
+							<a href="SesionRegistrate.jsp" class="text-uppercase">Inicio</a> / <a href="#" class="text-uppercase">unete</a>
 						</li>
 						<!-- /Account -->
 
@@ -182,7 +182,7 @@
 				<div class="menu-nav">
 					<span class="menu-header">Menu <i class="fa fa-bars"></i></span>
 					<ul class="menu-list">
-						<li><a href="#">Inicio</a></li>
+						<li><a href="index.jsp">Inicio</a></li>
 						<li><a href="#">Sobre nosotros</a></li>
 						<li ><a href="#">Envio </a></li>
 							
@@ -236,101 +236,12 @@
 		<!-- /container -->
 	</div>
 	<!-- /HOME -->
+	
 <!-- FOOTER -->
-	<footer id="footer" class="section section-grey">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
-				<!-- footer widget -->
-				<div class="col-md-3 col-sm-6 col-xs-6">
-					<div class="footer">
-						<!-- footer logo -->
-						<div class="footer-logo">
-							<a class="logo" href="index.html">
-		            <h1>Movie<span style="color: orangered">Hunter</span></h1>
-		          </a>
-						</div>
-						<!-- /footer logo -->
-
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-
-						<!-- footer social -->
-						<ul class="footer-social">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-							<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-						</ul>
-						<!-- /footer social -->
-					</div>
-				</div>
-				<!-- /footer widget -->
-
-				<!-- footer widget -->
-				<div class="col-md-3 col-sm-6 col-xs-6">
-					<div class="footer">
-						<h3 class="footer-header">My Account</h3>
-						<ul class="list-links">
-							<li><a href="#">Mi cuenta</a></li>
-							<li><a href="#">Carrito</a></li>
-							<li><a href="#">Inicio</a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- /footer widget -->
-
-				<div class="clearfix visible-sm visible-xs"></div>
-
-				<!-- footer widget -->
-				<div class="col-md-3 col-sm-6 col-xs-6">
-					<div class="footer">
-						<h3 class="footer-header">Atenci&oacute;n al cliente</h3>
-						<ul class="list-links">
-							<li><a href="#">Sobre nosotros</a></li>
-							<li><a href="#">Envio</a></li>
-							<li><a href="#">Contactanos</a></li>
-							<li><a href="#">Ayuda</a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- /footer widget -->
-
-				<!-- footer subscribe -->
-				<div class="col-md-3 col-sm-6 col-xs-6">
-					<div class="footer">
-						<h3 class="footer-header">Suscribete</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-						<form>
-							<div class="form-group">
-								<input class="input" placeholder="Enter Email Address">
-							</div>
-							<button class="primary-btn">Newsletter</button>
-						</form>
-					</div>
-				</div>
-				<!-- /footer subscribe -->
-			</div>
-			<!-- /row -->
-			<hr>
-			<!-- row -->
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center">
-					<!-- footer copyright -->
-					<div class="footer-copyright">
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						<p>Proyecto LucaTica Grupo 6</p>
-						
-					</div>
-					<!-- /footer copyright -->
-				</div>
-			</div>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
+	<footer>
+		<%@include file="header-footer/Footer.jsp"%>
 	</footer>
-	<!-- /FOOTER -->
+	<!-- /FOOTER --
 
 	<!-- jQuery Plugins -->
 	<script src="js/jquery.min.js"></script>

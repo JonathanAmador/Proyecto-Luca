@@ -45,7 +45,13 @@ public class DataFilm implements IDataFilm {
 					director = "%";
 				}
 
-				if (year == 0) {
+				
+				if(title == null){
+					title="%";
+				}
+				
+				if(year == 0){
+
 					System.out.println("Entra en DATOS");
 					result = sentencia.executeQuery("SELECT * FROM bd_film.film where Title like '%" + title
 							+ "%' and Director like '%" + director + "%' and Genre like '%" + genreCadena + "%';");
