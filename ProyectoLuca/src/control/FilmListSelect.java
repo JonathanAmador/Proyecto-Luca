@@ -42,13 +42,12 @@ public class FilmListSelect extends HttpServlet{
 			
 			int year=0;
 			
-			if(request.getParameter("year") != ""){
+			if(request.getParameter("year") != null){
 				year = Integer.parseInt(request.getParameter("year")) ;
 			}else{
 				year = 0;
 			}
-	        
-
+			System.out.println("title"+ title + "   director"+ director+"   genre  " + genre+ " year :  "+ year);
 			List<Film> result = filmService.showListFilm(title, director, genre, year);
 	       
 	        

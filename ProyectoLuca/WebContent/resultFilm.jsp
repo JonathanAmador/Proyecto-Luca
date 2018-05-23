@@ -127,7 +127,7 @@
 					<div class="col-md-6">
 						<div id="product-main-view">
 							<div class="product-view">
-								<image src = "${film.image}" >
+								<image src = "Image/${film.image}" >
                               
 							</div>
 						</div>

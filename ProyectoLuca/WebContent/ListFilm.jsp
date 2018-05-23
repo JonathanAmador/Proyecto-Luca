@@ -142,7 +142,7 @@
 										value="${film.idFilm}">
 										<i class="fa fa-search-plus"></i> Quick view
 									</button>
-									<image src="${film.image}">
+									<image src="Image/${film.image}">
 								</div>
 								<div class="product-body">
 									<h3 class="product-price">${film.price}<del
