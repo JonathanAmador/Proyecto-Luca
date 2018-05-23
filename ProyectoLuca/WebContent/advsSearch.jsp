@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>E-SHOP HTML Template</title>
+	<title>Proyecto LucaTic grupo A</title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
@@ -45,7 +45,7 @@
 		<div id="top-header">
 			<div class="container">
 				<div class="pull-left">
-					<span>Welcome to E-shop!</span>
+					<span>Proyecto LucaTic grupo A</span>
 				</div>
 				
 			</div>
@@ -58,7 +58,7 @@
 				<div class="pull-left">
 					<!-- Logo -->
 					<div class="header-logo">
-						<a class="logo" href="#">
+						<a class="logo" href="index.html">
 							<h1>Movie<span style="color: orangered">Hunter</span></h1>
 						</a>
 					</div>
@@ -157,20 +157,17 @@
 				<div class="category-nav show-on-click">
 					<span class="category-header">Genero <i class="fa fa-list"></i></span>
 					<ul class="category-list">
-						<li class="dropdown side-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Acción </a>
-							
-						</li>
-						<li><a href="#">Animación</a></li>
-						<li class="dropdown side-dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Ciencia ficción </a>
-							
+						<li class="dropdown side-dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown" aria-expanded="true">Acci&oacute;n </a></li>
+						<li><a href="#">Animaci&oacute;n</a></li>
+						<li class="dropdown side-dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown" aria-expanded="true">Ciencia ficci&oacute;n </a>
+
 						</li>
 						<li><a href="#">Comedia</a></li>
 						<li><a href="#">Drama</a></li>
-						<li class="dropdown side-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Documentales </a>
-							
-						</li>
+						<li class="dropdown side-dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown" aria-expanded="true">Documentales </a></li>
 						<li><a href="#">Terror</a></li>
 						<li><a href="#">Thriller</a></li>
 					</ul>
@@ -181,14 +178,11 @@
 				<div class="menu-nav">
 					<span class="menu-header">Menu <i class="fa fa-bars"></i></span>
 					<ul class="menu-list">
-						<li><a href="#">Inico</a></li>
+						<li><a href="index.html">Inico</a></li>
 						<li><a href="#">Sobre nosotros</a></li>
-						<li class="dropdown mega-dropdown"><a href="">Envio</a>
-							
-						</li>
-						<li class="dropdown mega-dropdown full-width"><a href="">Contactanos </a>
-							
-						</li>
+						<li class="dropdown mega-dropdown"><a href="">Envio</a></li>
+						<li class="dropdown mega-dropdown full-width"><a href="">Contactanos
+						</a></li>
 					</ul>
 				</div>
 				<!-- menu nav -->
@@ -326,8 +320,8 @@
 					<div class="footer">
 						<!-- footer logo -->
 						<div class="footer-logo">
-							<a class="logo" href="#">
-		            <img src="./img/logo.png" alt="">
+							<a class="logo" href="index.html">
+		            <h1>Movie<span style="color: orangered">Hunter</span></h1>
 		          </a>
 						</div>
 						<!-- /footer logo -->
@@ -352,11 +346,9 @@
 					<div class="footer">
 						<h3 class="footer-header">My Account</h3>
 						<ul class="list-links">
-							<li><a href="#">My Account</a></li>
-							<li><a href="#">My Wishlist</a></li>
-							<li><a href="#">Compare</a></li>
-							<li><a href="#">Checkout</a></li>
-							<li><a href="#">Login</a></li>
+							<li><a href="#">Mi cuenta</a></li>
+							<li><a href="#">Carrito</a></li>
+							<li><a href="#">Inicio</a></li>
 						</ul>
 					</div>
 				</div>
@@ -367,12 +359,12 @@
 				<!-- footer widget -->
 				<div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="footer">
-						<h3 class="footer-header">Customer Service</h3>
+						<h3 class="footer-header">Atenci&oacute;n al cliente</h3>
 						<ul class="list-links">
-							<li><a href="#">About Us</a></li>
-							<li><a href="#">Shiping & Return</a></li>
-							<li><a href="#">Shiping Guide</a></li>
-							<li><a href="#">FAQ</a></li>
+							<li><a href="#">Sobre nosotros</a></li>
+							<li><a href="#">Envio</a></li>
+							<li><a href="#">Contactanos</a></li>
+							<li><a href="#">Ayuda</a></li>
 						</ul>
 					</div>
 				</div>
@@ -381,13 +373,13 @@
 				<!-- footer subscribe -->
 				<div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="footer">
-						<h3 class="footer-header">Stay Connected</h3>
+						<h3 class="footer-header">Suscribete</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
 						<form>
 							<div class="form-group">
 								<input class="input" placeholder="Enter Email Address">
 							</div>
-							<button class="primary-btn">Join Newslatter</button>
+							<button class="primary-btn">Newsletter</button>
 						</form>
 					</div>
 				</div>
@@ -401,8 +393,8 @@
 					<!-- footer copyright -->
 					<div class="footer-copyright">
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						<p>Proyecto LucaTica Grupo 6</p>
+						
 					</div>
 					<!-- /footer copyright -->
 				</div>
