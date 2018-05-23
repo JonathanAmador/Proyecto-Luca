@@ -30,7 +30,15 @@ public class UserController extends HttpServlet {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	/**
+	 * Método que recibe un operación a realizar y la hace o manda a hacer a otro método
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 * @throws SQLException
+	 */
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, SQLException {
 		String operacion;
@@ -39,6 +47,12 @@ public class UserController extends HttpServlet {
 			IUserService op = new UserService();
 			if (operacion.equals("registrar")) {
 				boolean result = op.addUser(recogerDatos(request));
+				if(result){
+					request.setAttribute("mensaje", "Dado de alta correctamente");
+				}else{
+					response.sendRedirect("Error.jsp?error=El usuario ya existe");
+				}
+				
 				System.out.println(result);// hacer algo cuando sea true o false
 			} else if (operacion.equals("fichaUsuario")) {
 				showUser(request,response,op);
@@ -52,6 +66,16 @@ public class UserController extends HttpServlet {
 	}
 	
 	
+	/**
+	 * Coge el parametro de id de usuario y pide el usuario que se indentifica con este a la capa de servicios
+	 * Luego le da en control al jsp correspondiente
+	 * @param request
+	 * @param response
+	 * @param op
+	 * @throws SQLException
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	private void showUser(HttpServletRequest request, HttpServletResponse response, IUserService op) throws SQLException, ServletException, IOException {
 		int id = 0;
 		if (request.getParameter("id") != null) {
@@ -64,6 +88,17 @@ public class UserController extends HttpServlet {
 		view.forward(request, response);	
 	}
 
+	/**
+	 * Coge el parametro de mail y password, luego manda a la capa de servicios si existe ese usuario con esa contraseña,
+	 * si existe le devolvera el usuario con todos los datos y crea una sesion con él
+	 * Luego le da en control al jsp correspondiente
+	 * @param request
+	 * @param response
+	 * @param op
+	 * @throws SQLException
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	private void login(HttpServletRequest request, HttpServletResponse response, IUserService op) throws SQLException, ServletException, IOException{
 		String mail = request.getParameter("mail");
 		String pass = request.getParameter("password");
@@ -80,6 +115,11 @@ public class UserController extends HttpServlet {
         view.forward(request, response);
 	}
 
+	/**
+	 * Crea un modelo usuario y guarda en el los datos que le han llegado, a continuación lo devuelve 
+	 * @param request
+	 * @return el usuario
+	 */
 	private User recogerDatos(HttpServletRequest request) {
 		User user = new User();
 		user.setName(request.getParameter("name"));

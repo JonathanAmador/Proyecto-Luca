@@ -142,43 +142,66 @@
 		<div class="container">
 			<div id="responsive-nav">
 				<!-- category nav -->
+				
 				<div class="category-nav show-on-click">
 					<span class="category-header">Genero <i class="fa fa-list"></i></span>
+					
 					<ul class="category-list">
 					
+						<form method="POST" action="FilmListSelect.do">
 						<li>
-						<button class="main-btn quick-view" name="id" value="${film.idFilm}" style="border: 0px">
-						<a href="#">Acci&oacute;n </a>
-						</button></li>
+						<button class="main-btn quick-view" name="genre" value="ACTION" style="border: 0px">
+						<p>Acci&oacute;n </p>
+						</button>
+
+						</li>
 						<li>
-						<button class="main-btn quick-view" name="id" value="${film.idFilm}" >
-						<a href="#">Animaci&oacute;n</a>
-						</button></li>
+						<button class="main-btn quick-view" name="genre" value="ANIMATION" >
+						<p>Animaci&oacute;n</p>
+						</button>
+
+						</li>
 						<li >
-						<button class="main-btn quick-view" name="id" value="${film.idFilm}">
-						<a href="#">Ciencia ficci&oacute;n </a>
-						</button></li>
-						<li><button class="main-btn quick-view" name="id" value="${film.idFilm}">
-						<a href="#">Comedia</a>
-						</button></li>
+
+						<button class="main-btn quick-view" name="genre" value="SCIENCE">
+						<p>Ciencia ficci&oacute;n </p>
+						</button>
+
+						</li>
 						<li>
-						<button class="main-btn quick-view" name="id" value="${film.idFilm}">
-						<a href="#">Drama</a>
-						</button></li>
+
+						<button class="main-btn quick-view" name="genre" value="COMEDY">
+						<p>Comedia</p>
+						</button>
+						</li>
+						
 						<li>
-						<button class="main-btn quick-view" name="id" value="${film.idFilm}">
-						<a href="#">Documentales </a>
-						</button></li>
+						<button class="main-btn quick-view" name="genre" value="DRAMA">
+						<p>Drama</p>
+						</button>
+						</li>
+						
 						<li>
-						<button class="main-btn quick-view" name="id" value="${film.idFilm}">
-						<a href="#">Terror</a>
-						</button></li>
+						<button class="main-btn quick-view" name="genre" value="DOCUMENTARY">
+						<p>Documentales </p>
+						</button>
+						</li>
+						
 						<li>
-						<button class="main-btn quick-view" name="id" value="${film.idFilm}">
-						<a href="#">Thriller</a>
-						</button></li>
+						<button class="main-btn quick-view" name="genre" value="TERROR">
+						<p>Terror</p>
+						</button>
+						</li>
+						<li>
+						<button class="main-btn quick-view" name="genre" value="THRILLER">
+						<p>Thriller</p>
+						</button>	
+						</li>
+						</form>
+						
 					</ul>
 				</div>
+				
 				<!-- /category nav -->
 
 				<!-- menu nav -->

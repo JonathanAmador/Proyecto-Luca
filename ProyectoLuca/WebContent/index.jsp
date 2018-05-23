@@ -157,23 +157,59 @@
 				<div class="category-nav">
 					<span class="category-header">Generos <i class="fa fa-list"></i></span>
 					<ul class="category-list">
-						<li class="dropdown side-dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Acci&oacute;n</a>
-							
+						
+						<form method="POST" action="FilmListSelect.do">
+						<li>
+						<button class="main-btn quick-view" name="genre" value="ACTION" style="border: 0px">
+						<p>Acci&oacute;n </p>
+						</button>
+
 						</li>
-						<li><a href="#">Animaci&oacute;n</a></li>
-						<li class="dropdown side-dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Ciencia fici&oacute;n</a>
-							
+						<li>
+
+						<button class="main-btn quick-view" name="genre" value="ANIMATION" >
+						<p>Animaci&oacute;n</p>
+						</button>
+
 						</li>
-						<li><a href="#">Comedia</a></li>
-						<li><a href="#">Drama</a></li>
-						<li class="dropdown side-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Documentales </a>
-							
+						<li >
+
+						<button class="main-btn quick-view" name="genre" value="SCIENCE">
+						<p>Ciencia ficci&oacute;n </p>
+						</button>
+
 						</li>
-						<li><a href="#">Terror</a></li>
-						<li><a href="#">Thriller</a></li>
+						<li>
+
+						<button class="main-btn quick-view" name="genre" value="COMEDY">
+						<p>Comedia</p>
+						</button>
+
+						</li>
+						<li>
+
+						<button class="main-btn quick-view" name="genre" value="DRAMA">
+						<p>Drama</p>
+						</button>
+
+						</li>
+						<li>
+						<button class="main-btn quick-view" name="genre" value="DOCUMENTARY">
+						<p>Documentales </p>
+						</button>
+
+						</li>
+						<li>
+						<button class="main-btn quick-view" name="genre" value="TERROR">
+						<p>Terror</p>
+						</button>
+						</li>
+						<li>
+						<button class="main-btn quick-view" name="genre" value="THRILLER">
+						<p>Thriller</p>
+						</button>	
+						</li>
+						</form>
 					</ul>
 				</div>
 				<!-- /category nav -->
