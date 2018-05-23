@@ -13,6 +13,7 @@
 		<%@include file="header-footer/header.jsp"%>
 	</header>
 
+<<<<<<< HEAD
 	<nav>
 		<div style="overflow: auto">
 			<div class="menu">
@@ -26,6 +27,10 @@
 	 <!-- Main  -->
 	<div class="main">
 		<!-- First row  -->
+=======
+
+<main>
+>>>>>>> 941a70efe61af51948cbf540a5ec057d3f26eefa
 
 		<div class="row">
 			<h2 style="padding: 0px 0px 0px 20px">Nombre de Pelicula</h2>

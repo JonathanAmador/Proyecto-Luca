@@ -14,6 +14,7 @@
 <script src="include.js"></script>
 </head>
 <body>
+<<<<<<< HEAD
 	<header>
 	<div class="topnav">
 		<h1>
@@ -32,5 +33,39 @@
 	</div>
 	</header>
 
+=======
+<header>
+
+  <div class="topnav">
+        <h1>Pelis<span>Online</span></h1>
+  <div class="search-container">
+      
+    <form method="POST" action="FilmListSelect.do">
+      <input type="text" placeholder="Busca tu pelicula por titulo o director..." name="title" size="50" />
+      <input id="buscar" type="submit" value="Buscar" />
+      
+    </form>
+      <a href="advsSearch.jsp" class="id" id="advsearch">Busqueda avazada</a>
+   </div>
+   </div>
+    
+</header>
+    
+  <nav>
+	<div style="overflow:auto">
+	  <div class="menu">
+	    <a href="#"><strong>Accion</strong></a>
+	    <a href="#"><strong>Animacion</strong></a>
+	    <a href="#"><strong>Ciencia Ficcion</strong></a>
+	    <a href="#"><strong>Comedia</strong></a>
+	    <a href="#"><strong>Drama</strong></a>
+	    <a href="#"><strong>Documentales</strong></a>
+	    <a href="#"><strong>Terror</strong></a>
+	    <a href="#"><strong>Thriller</strong></a>
+	  </div>
+	  </div>
+  </nav>
+>>>>>>> 941a70efe61af51948cbf540a5ec057d3f26eefa
 </body>
+
 </html>
