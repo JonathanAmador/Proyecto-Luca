@@ -142,45 +142,43 @@
 		<div class="container">
 			<div id="responsive-nav">
 				<!-- category nav -->
-				<form method="POST" action="FilmListSelect.do">
 				<div class="category-nav show-on-click">
 					<span class="category-header">Genero <i class="fa fa-list"></i></span>
 					<ul class="category-list">
 					
 						<li>
-						<button class="main-btn quick-view" name="genre" value="ACTION" style="border: 0px">
+						<button class="main-btn quick-view" name="id" value="${film.idFilm}" style="border: 0px">
 						<a href="#">Acci&oacute;n </a>
 						</button></li>
 						<li>
-						<button class="main-btn quick-view" name="genre" value="ANIMATION" >
+						<button class="main-btn quick-view" name="id" value="${film.idFilm}" >
 						<a href="#">Animaci&oacute;n</a>
 						</button></li>
 						<li >
-						<button class="main-btn quick-view" name="genre" value="SCIENCE">
+						<button class="main-btn quick-view" name="id" value="${film.idFilm}">
 						<a href="#">Ciencia ficci&oacute;n </a>
 						</button></li>
-						<li><button class="main-btn quick-view" name="genre" value="COMEDY">
+						<li><button class="main-btn quick-view" name="id" value="${film.idFilm}">
 						<a href="#">Comedia</a>
 						</button></li>
 						<li>
-						<button class="main-btn quick-view" name="genre" value="DRAMA">
+						<button class="main-btn quick-view" name="id" value="${film.idFilm}">
 						<a href="#">Drama</a>
 						</button></li>
 						<li>
-						<button class="main-btn quick-view" name="genre" value="DOCUMENT">
+						<button class="main-btn quick-view" name="id" value="${film.idFilm}">
 						<a href="#">Documentales </a>
 						</button></li>
 						<li>
-						<button class="main-btn quick-view" name="genre" value="TERROR">
+						<button class="main-btn quick-view" name="id" value="${film.idFilm}">
 						<a href="#">Terror</a>
 						</button></li>
 						<li>
-						<button class="main-btn quick-view" name="genre" value="THRILLER">
+						<button class="main-btn quick-view" name="id" value="${film.idFilm}">
 						<a href="#">Thriller</a>
 						</button></li>
 					</ul>
 				</div>
-				</form>
 				<!-- /category nav -->
 
 				<!-- menu nav -->
