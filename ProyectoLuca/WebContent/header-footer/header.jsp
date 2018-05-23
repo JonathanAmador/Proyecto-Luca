@@ -14,7 +14,6 @@
 <script src="include.js"></script>
 </head>
 <body>
-<<<<<<< HEAD
 	<header>
 	<div class="topnav">
 		<h1>
@@ -33,7 +32,6 @@
 	</div>
 	</header>
 
-=======
 <header>
 
   <div class="topnav">
@@ -65,7 +63,6 @@
 	  </div>
 	  </div>
   </nav>
->>>>>>> 941a70efe61af51948cbf540a5ec057d3f26eefa
 </body>
 
 </html>
