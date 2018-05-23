@@ -19,15 +19,12 @@ public class DataFilm implements IDataFilm {
 			Statement sentencia = Conexion.openStatement();
 			synchronized (sentencia) {
 				// Cogemos todos los datos de las películas
-				System.out.println(title);
-				//result = sentencia.executeQuery("SELECT * FROM bd_film.film where Title like '%"+title+"%' ;");
 				
 				String genreCadena = "%";
 				if(!genre.equals(TypeGenre.ALL_GENRE))
 				{
 					genreCadena = genre.toString();
 				}
-				
 				
 				if(year == 0){
 					result = sentencia.executeQuery("SELECT * FROM bd_film.film where Title like '%"+title+"%' and Director like '%"+director+"%' and Genre like '%"+genreCadena+"%';");
