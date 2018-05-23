@@ -10,6 +10,7 @@ public interface IDataUser {
 	public List<User> showListUser() throws SQLException;
 	public User showUser(int id) throws SQLException;
 	public boolean addUser(User user) throws SQLException;
-	public boolean checkMail(String Mail) throws SQLException;
+	public boolean checkMail(String mail) throws SQLException;
+	public boolean checkUser(String user, String mail) throws SQLException;
 		
 }

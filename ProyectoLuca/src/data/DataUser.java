@@ -105,7 +105,7 @@ public class DataUser implements IDataUser {
 		try {
 			Statement sentencia = Conexion.openStatement();
 			synchronized (sentencia) {
-				result = sentencia.executeQuery("SELECT * FROM bd_film.;");
+				result = sentencia.executeQuery("SELECT * FROM bd_film.user;");
 			}
 			if (!result.next()) {
 				isMail = false;
@@ -128,8 +128,40 @@ public class DataUser implements IDataUser {
 				}
 			}
 		}
-
 		return isMail;
+	}
+
+	@Override
+	public boolean checkUser(String user, String mail) throws SQLException {
+		boolean isUser = false;
+		ResultSet result = null;// Objeto para guardar los resultados
+		try {
+			Statement sentencia = Conexion.openStatement();
+			synchronized (sentencia) {
+				result = sentencia.executeQuery("SELECT * FROM bd_film.user;");
+			}
+			if (!result.next()) {
+				isUser = false;
+			} else {
+				result.beforeFirst();
+				while (result.next() || isUser == true) {
+					if (user==result.getString(2) && mail == result.getString(4)) {
+						isUser = true;
+					}
+				}
+			}
+		} catch (SQLException e2) {
+			throw e2;
+		} finally {
+			if (result != null) {
+				try {
+					result.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return isUser;
 	}
 
 }
