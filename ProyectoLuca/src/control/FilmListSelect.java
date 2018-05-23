@@ -42,12 +42,12 @@ public class FilmListSelect extends HttpServlet{
 			}   
 			
 			int year=0;
-			
+			/*
 			if(request.getParameter("year") != ""){
 				year = Integer.parseInt(request.getParameter("year")) ;
 			}else{
 				year = 0;
-			}
+			}*/
 	        
 	        
 	       
@@ -58,6 +58,7 @@ public class FilmListSelect extends HttpServlet{
 	        //PASO 03: Salir      
 	        RequestDispatcher view = request.getRequestDispatcher("ListFilm.jsp");
 	        view.forward(request, response);
+	        //request.getRequestDispatcher("result.jsp").forward(request, response);
 	        
 	    }
 

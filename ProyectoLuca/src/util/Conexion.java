@@ -23,6 +23,7 @@ public class Conexion {
 			return con;
 		}catch (Throwable ex) {
 			System.err.println("Initial SessionFactory creation failed." + ex);
+			System.out.println("ERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRORRRRRRRRRRRRRRRRRRRRRRRRRRRR");
 			throw new ExceptionInInitializerError(ex);
 		}
 	}
