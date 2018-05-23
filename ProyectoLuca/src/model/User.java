@@ -5,25 +5,27 @@ public class User {
 	private int id_user;
 	private String name;
 	private String surname;
-	private int phone;
-	private String address;
 	private String email;
 	private String pass;
-
+	private String address;
+	private int phone;
+	
 	public User() {
 		super();
 	}
 
-	public User(int id_user, String name, String surname, int phone, String address, String email, String pass) {
+	public User(int id_user, String name, String surname, String email, String pass, String address, int phone) {
 		super();
 		this.id_user = id_user;
 		this.name = name;
 		this.surname = surname;
-		this.phone = phone;
-		this.address = address;
 		this.email = email;
 		this.pass = pass;
+		this.address = address;
+		this.phone = phone;
 	}
+
+
 
 	public int getId_user() {
 		return id_user;
