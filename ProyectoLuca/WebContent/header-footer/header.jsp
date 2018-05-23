@@ -72,7 +72,7 @@
 							aria-expanded="true">
 								<div class="header-btns-icon">
 									<i class="fa fa-shopping-cart"></i> <span class="qty">3</span>
-								</div> <strong class="text-uppercase">Mi carrito:</strong> <br> <span>35.20&euro;</span>
+								</div> <strong class="text-uppercase">Mi carrito:</strong> <br> <span>35.20€</span>
 						</a>
 							<div class="custom-menu">
 								<div id="shopping-cart">
