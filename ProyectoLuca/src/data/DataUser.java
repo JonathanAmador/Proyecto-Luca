@@ -11,6 +11,7 @@ import util.Conexion;
 
 public class DataUser implements IDataUser {
 
+	
 	@Override
 	public User showUser(int id) throws SQLException {
 		ResultSet result = null;// Objeto para guardar los resultados
