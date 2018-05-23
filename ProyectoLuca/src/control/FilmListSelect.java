@@ -33,6 +33,7 @@ public class FilmListSelect extends HttpServlet{
 	        String title = request.getParameter("title");
 	        String director = request.getParameter("director");
 	        TypeGenre genre = TypeGenre.ALL_GENRE;
+	        System.out.println(request.getParameter("genre"));
 			for (TypeGenre a : TypeGenre.values()) {
 				if (a.toString().equals(request.getParameter("genre"))) {
 					genre = a;
