@@ -1,7 +1,7 @@
 package model;
 
 public enum TypeGenre {
-	
+	ALL_GENRE("Todos los géneros"),
 	ACTION("Acción/Aventuras "),
 	SCIENCE("Ciencia Ficción/Fantástico"),
 	COMEDY("Comedia"),

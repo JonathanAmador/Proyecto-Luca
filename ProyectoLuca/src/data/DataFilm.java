@@ -19,13 +19,20 @@ public class DataFilm implements IDataFilm {
 			Statement sentencia = Conexion.openStatement();
 			synchronized (sentencia) {
 				// Cogemos todos los datos de las películas
-				System.out.println(title);
-				result = sentencia.executeQuery("SELECT * FROM bd_film.film where Title like '%"+title+"%' ;");
-				/* if(year == 0){
-					result = sentencia.executeQuery("SELECT * FROM bd_film.film where Title like '%"+title+"%' and Director like '%"+director+"%' and Genre like '%"+genre+"%';");
+				
+				String genreCadena = "%";
+				if(!genre.equals(TypeGenre.ALL_GENRE))
+				{
+					genreCadena = genre.toString();
+				}
+				
+				if(year == 0){
+					result = sentencia.executeQuery("SELECT * FROM bd_film.film where Title like '%"+title+"%' and Director like '%"+director+"%' and Genre like '%"+genreCadena+"%';");
 				}else{
-					result = sentencia.executeQuery("SELECT * FROM bd_film.film where Title like '%"+title+"%' and Director like '%"+director+"%' and Year like '%"+year+"%' and Genre like '%"+genre+"%';");
-				}*/
+				
+					result = sentencia.executeQuery("SELECT * FROM bd_film.film where Title like '%"+title+"%' and Director like '%"+director+"%' and Year like '%"+year+"%' and Genre like '%"+genreCadena+"%';");
+				}
+					
 			}
 			if (!result.next()) {
 				return null;
@@ -58,7 +65,55 @@ public class DataFilm implements IDataFilm {
 		}
 		return listFilm;
 	}
+	
+	/*
+	public List<Film> showListFilm(String title, String director , int year) throws SQLException {
+		ResultSet result = null;// Objeto para guardar los resultados
+		List<Film> listFilm = null;
+		try {
+			Statement sentencia = Conexion.openStatement();
+			synchronized (sentencia) {
+				// Cogemos todos los datos de las películas
+				System.out.println(title);
+				//result = sentencia.executeQuery("SELECT * FROM bd_film.film where Title like '%"+title+"%' ;");
+				if(year == 0){
+					result = sentencia.executeQuery("SELECT * FROM bd_film.film where Title like '%"+title+"%' and Director like '%"+director+"%'");
+				}else{
+					result = sentencia.executeQuery("SELECT * FROM bd_film.film where Title like '%"+title+"%' and Director like '%"+director+"%' and Year like '%"+year+"%'");
+				}
+			}
+			if (!result.next()) {
+				return null;
+			} else {
+				listFilm = new ArrayList<Film>();
+				result.beforeFirst();
+				while (result.next()) {
 
+					TypeGenre genre1 = TypeGenre.ACTION;
+					for (TypeGenre a : TypeGenre.values()) {
+						if (a.toString() == result.getString(6)) {
+							genre1 = a;
+						}
+					}
+					listFilm.add(new Film(result.getInt(1), result.getString(2), result.getString(3), result.getString(4),
+							result.getFloat(5), result.getInt(6), genre1, result.getString(8),result.getString(9)));
+				}
+
+			}
+		} catch (SQLException e2) {
+			throw e2;
+		} finally {
+			if (result != null) {
+				try {
+					result.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}	
+		}
+		return listFilm;
+	}
+*/
 	@Override
 	public Film showFilm(int id) throws SQLException {
 		ResultSet result = null;// Objeto para guardar los resultados
