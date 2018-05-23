@@ -11,6 +11,7 @@ import util.Conexion;
 
 public class DataUser implements IDataUser {
 
+	
 	@Override
 	public User showUser(int id) throws SQLException {
 		ResultSet result = null;// Objeto para guardar los resultados
@@ -105,13 +106,13 @@ public class DataUser implements IDataUser {
 		try {
 			Statement sentencia = Conexion.openStatement();
 			synchronized (sentencia) {
-				result = sentencia.executeQuery("SELECT * FROM bd_film.;");
+				result = sentencia.executeQuery("SELECT * FROM bd_film.user;");
 			}
 			if (!result.next()) {
 				isMail = false;
 			} else {
 				result.beforeFirst();
-				while (result.next() || isMail == true) {
+				while (result.next() && isMail == false) {
 					if (mail == result.getString(4)) {
 						isMail = true;
 					}
@@ -128,8 +129,42 @@ public class DataUser implements IDataUser {
 				}
 			}
 		}
-
 		return isMail;
+	}
+
+	@Override
+	public User checkUser(String mail, String pass) throws SQLException {
+		boolean isUser = false;
+		User user = null;
+		ResultSet result = null;// Objeto para guardar los resultados
+		try {
+			Statement sentencia = Conexion.openStatement();
+			synchronized (sentencia) {
+				result = sentencia.executeQuery("SELECT * FROM bd_film.user;");
+			}
+			if (!result.next()) {
+				return null;
+			} else {
+				result.beforeFirst();
+				while (result.next() && isUser == true) {
+					if (mail==result.getString(4) && pass == result.getString(5)) {
+						isUser = true;
+						user = new User(result.getInt(1),result.getString(2),result.getString(3),result.getString(4),result.getString(5),result.getString(6),result.getInt(7));
+					}
+				}
+			}
+		} catch (SQLException e2) {
+			throw e2;
+		} finally {
+			if (result != null) {
+				try {
+					result.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return user;
 	}
 
 }

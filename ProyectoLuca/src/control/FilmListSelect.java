@@ -18,9 +18,7 @@ import services.IFilmService;
 import java.util.*;
 
 @WebServlet(
-        name = "FilmListSelect",
-        urlPatterns = {"/FilmListSelect.do"},
-        asyncSupported = false
+		name = "FilmListSelect", urlPatterns = { "/FilmListSelect.do" }, asyncSupported = false
 )
 public class FilmListSelect extends HttpServlet{
 
