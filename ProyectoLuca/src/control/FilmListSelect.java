@@ -54,6 +54,25 @@ public class FilmListSelect extends HttpServlet {
 
 			}
 		}
+		
+		int year=0;
+		
+		if(request.getParameter("year") != "" && request.getParameter("year") !=null){
+			year = Integer.parseInt(request.getParameter("year")) ;
+		}else{
+			year = 0;
+		}
+        
+
+		List<Film> result = filmService.showListFilm(title, director, genre, year);
+       
+        
+        request.setAttribute("listFilm", result);
+        
+        //PASO 03: Salir      
+        RequestDispatcher view = request.getRequestDispatcher("ListFilm.jsp");
+        view.forward(request, response);
+        
 	}
 
 	/**
