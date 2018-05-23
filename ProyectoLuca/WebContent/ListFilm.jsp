@@ -240,7 +240,7 @@
 										<span>New</span> <span class="sale">-20%</span>
 									</div>
 									<button class="main-btn quick-view" name="id"
-										value="${film.idFilm}">
+										value="Image/${film.idFilm}">
 										<i class="fa fa-search-plus"></i> Quick view
 									</button>
 									<image src="https://pics.filmaffinity.com/life-510388488-large.jpg">
