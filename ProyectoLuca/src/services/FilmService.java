@@ -17,6 +17,11 @@ public class FilmService implements IFilmService{
 		return dataFilm.showListFilm(titulo,director, genre, year);
 		
 	}
+	
+	/*public List<Film> showListFilm(String titulo, String director , int year) throws SQLException {
+		return dataFilm.showListFilm(titulo,director, year);
+		
+	}*/
 
 	@Override
 	public Film showFilm(int id) throws SQLException {

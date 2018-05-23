@@ -34,24 +34,25 @@ public class FilmListSelect extends HttpServlet{
 	    	//PASO 01: Recoger informacion
 	        String title = request.getParameter("title");
 	        String director = request.getParameter("director");
-	        TypeGenre genre = TypeGenre.ACTION;
+	        TypeGenre genre = TypeGenre.ALL_GENRE;
 			for (TypeGenre a : TypeGenre.values()) {
-				if (a.toString() ==  request.getParameter("genre")) {
+				if (a.toString().equals(request.getParameter("genre"))) {
 					genre = a;
+					
 				}
 			}   
 			
 			int year=0;
-			/*
+			
 			if(request.getParameter("year") != ""){
 				year = Integer.parseInt(request.getParameter("year")) ;
 			}else{
 				year = 0;
-			}*/
+			}
 	        
-	        
+
+			List<Film> result = filmService.showListFilm(title, director, genre, year);
 	       
-	        List<Film> result = filmService.showListFilm(title, director, genre, year);
 	        
 	        request.setAttribute("listFilm", result);
 	        

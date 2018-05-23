@@ -14,7 +14,7 @@
 	<h3>${film.genre.description}</h3>
 	<h3>${film.year}</h3>
 	<h3>${film.duration}</h3>
-	<image src = "${film.image}" >
+	<image src = "Image/${film.image}" >
 	<p>${film.synopsis}</p>
 	<h4>${film.price}</h4> 
 	<!-- <p><input type = "submit" value="Añadir carrito"/></p>-->
