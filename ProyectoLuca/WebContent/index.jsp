@@ -58,7 +58,7 @@
 				<div class="pull-left">
 					<!-- Logo -->
 					<div class="header-logo">
-						<a class="logo" href="#">
+						<a class="logo" href="index.jsp">
 							<h1>Movie<span style="color: orangered">Hunter</span></h1>
 						</a>
 					</div>
@@ -86,7 +86,7 @@
 								</div>
 								<strong class="text-uppercase">Mi cuenta <i class="fa fa-caret-down"></i></strong>
 							</div>
-							<a href="#" class="text-uppercase">Inicio</a> / <a href="#" class="text-uppercase">unete</a>
+							<a href="SesionRegistrate.jsp" class="text-uppercase">Inicio</a> / <a href="#" class="text-uppercase">unete</a>
 						</li>
 						<!-- /Account -->
 
@@ -182,7 +182,7 @@
 				<div class="menu-nav">
 					<span class="menu-header">Menu <i class="fa fa-bars"></i></span>
 					<ul class="menu-list">
-						<li><a href="#">Inicio</a></li>
+						<li><a href="index.jsp">Inicio</a></li>
 						<li><a href="#">Sobre nosotros</a></li>
 						<li ><a href="#">Envio </a></li>
 							
@@ -247,7 +247,7 @@
 					<div class="footer">
 						<!-- footer logo -->
 						<div class="footer-logo">
-							<a class="logo" href="index.html">
+							<a class="logo" href="index.jsp">
 		            <h1>Movie<span style="color: orangered">Hunter</span></h1>
 		          </a>
 						</div>
@@ -275,7 +275,7 @@
 						<ul class="list-links">
 							<li><a href="#">Mi cuenta</a></li>
 							<li><a href="#">Carrito</a></li>
-							<li><a href="#">Inicio</a></li>
+							<li><a href="SesionRegistrate.jsp">Inicio</a></li>
 						</ul>
 					</div>
 				</div>

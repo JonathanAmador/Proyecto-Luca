@@ -45,69 +45,7 @@
 	<header>
 		<%@include file="header-footer/header.jsp" %>
 	</header>
-	<!-- /HEADER -->
-	<!-- NAVIGATION -->
-	<div id="navigation">
-		<!-- container -->
-		<div class="container">
-			<div id="responsive-nav">
-				<!-- category nav -->
-				<div class="category-nav show-on-click">
-					<span class="category-header">Genero <i class="fa fa-list"></i></span>
-					<ul class="category-list">
-					
-						<li>
-						<button class="main-btn quick-view" name="id" value="${film.idFilm}" style="border: 0px">
-						<a href="#">Acci&oacute;n </a>
-						</button></li>
-						<li>
-						<button class="main-btn quick-view" name="id" value="${film.idFilm}" >
-						<a href="#">Animaci&oacute;n</a>
-						</button></li>
-						<li >
-						<button class="main-btn quick-view" name="id" value="${film.idFilm}">
-						<a href="#">Ciencia ficci&oacute;n </a>
-						</button></li>
-						<li><button class="main-btn quick-view" name="id" value="${film.idFilm}">
-						<a href="#">Comedia</a>
-						</button></li>
-						<li>
-						<button class="main-btn quick-view" name="id" value="${film.idFilm}">
-						<a href="#">Drama</a>
-						</button></li>
-						<li>
-						<button class="main-btn quick-view" name="id" value="${film.idFilm}">
-						<a href="#">Documentales </a>
-						</button></li>
-						<li>
-						<button class="main-btn quick-view" name="id" value="${film.idFilm}">
-						<a href="#">Terror</a>
-						</button></li>
-						<li>
-						<button class="main-btn quick-view" name="id" value="${film.idFilm}">
-						<a href="#">Thriller</a>
-						</button></li>
-					</ul>
-				</div>
-				<!-- /category nav -->
-
-				<!-- menu nav -->
-				<div class="menu-nav">
-					<span class="menu-header">Menu <i class="fa fa-bars"></i></span>
-					<ul class="menu-list">
-						<li><a href="index.html">Inico</a></li>
-						<li><a href="#">Sobre nosotros</a></li>
-						<li><a href="">Envio</a></li>
-						<li><a href="">Contactanos
-						</a></li>
-					</ul>
-				</div>
-				<!-- menu nav -->
-			</div>
-		</div>
-		<!-- /container -->
-	</div>
-	<!-- /NAVIGATION -->
+	
 
 	<!-- BREADCRUMB -->
 	<div id="breadcrumb">

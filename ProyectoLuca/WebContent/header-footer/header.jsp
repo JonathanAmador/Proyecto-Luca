@@ -32,7 +32,7 @@
 				<div class="pull-left">
 					<!-- Logo -->
 					<div class="header-logo">
-						<a class="logo" href="index.html">
+						<a class="logo" href="index.jsp">
 							<h1>Movie<span style="color: orangered">Hunter</span></h1>
 						</a>
 					</div>
@@ -42,7 +42,7 @@
 					<!-- Search -->
 					<div class="header-search">
 						<form method="POST" action="FilmListSelect.do">
-							<input type="text" placeholder="Busca tu pelicula..."
+							<input type="text" placeholder="Busca el titulo de la pelicula..."
 								name="title" size="50"> <input class="search-btn"
 								id="buscar" type="submit" value="Buscar" />
 						</form>
@@ -62,8 +62,7 @@
 								</div>
 								<strong class="text-uppercase">Mi cuenta <i
 									class="fa fa-caret-down"></i></strong>
-							</div> <a href="#" class="text-uppercase">Inicio</a> / <a href="#"
-							class="text-uppercase">unete</a>
+							</div> <a href="SesionRegistrate.jsp" class="text-uppercase">Inicio/Resgistrate</a> 
 						</li>
 						<!-- /Account -->
 
@@ -84,7 +83,7 @@
 											</div>
 											<div class="product-body">
 												<h3 class="product-price">
-													$32.50 <span class="qty">x3</span>
+													32.50&euro; <span class="qty">x3</span>
 												</h3>
 												<h2 class="product-name">
 													<a href="#">Product Name Goes Here</a>
@@ -100,7 +99,7 @@
 											</div>
 											<div class="product-body">
 												<h3 class="product-price">
-													$32.50 <span class="qty">x3</span>
+													32.50&euro; <span class="qty">x3</span>
 												</h3>
 												<h2 class="product-name">
 													<a href="#">Product Name Goes Here</a>
@@ -135,6 +134,70 @@
 		</div>
 		<!-- container -->
 	</header>
+	<!-- /HEADER -->
+	
+	<!-- NAVIGATION -->
+	<div id="navigation">
+		<!-- container -->
+		<div class="container">
+			<div id="responsive-nav">
+				<!-- category nav -->
+				<div class="category-nav show-on-click">
+					<span class="category-header">Genero <i class="fa fa-list"></i></span>
+					<ul class="category-list">
+					
+						<li>
+						<button class="main-btn quick-view" name="id" value="${film.idFilm}" style="border: 0px">
+						<a href="#">Acci&oacute;n </a>
+						</button></li>
+						<li>
+						<button class="main-btn quick-view" name="id" value="${film.idFilm}" >
+						<a href="#">Animaci&oacute;n</a>
+						</button></li>
+						<li >
+						<button class="main-btn quick-view" name="id" value="${film.idFilm}">
+						<a href="#">Ciencia ficci&oacute;n </a>
+						</button></li>
+						<li><button class="main-btn quick-view" name="id" value="${film.idFilm}">
+						<a href="#">Comedia</a>
+						</button></li>
+						<li>
+						<button class="main-btn quick-view" name="id" value="${film.idFilm}">
+						<a href="#">Drama</a>
+						</button></li>
+						<li>
+						<button class="main-btn quick-view" name="id" value="${film.idFilm}">
+						<a href="#">Documentales </a>
+						</button></li>
+						<li>
+						<button class="main-btn quick-view" name="id" value="${film.idFilm}">
+						<a href="#">Terror</a>
+						</button></li>
+						<li>
+						<button class="main-btn quick-view" name="id" value="${film.idFilm}">
+						<a href="#">Thriller</a>
+						</button></li>
+					</ul>
+				</div>
+				<!-- /category nav -->
+
+				<!-- menu nav -->
+				<div class="menu-nav">
+					<span class="menu-header">Menu <i class="fa fa-bars"></i></span>
+					<ul class="menu-list">
+						<li><a href="index.html">Inico</a></li>
+						<li><a href="#">Sobre nosotros</a></li>
+						<li><a href="">Envio</a></li>
+						<li><a href="">Contactanos
+						</a></li>
+					</ul>
+				</div>
+				<!-- menu nav -->
+			</div>
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /NAVIGATION -->
 </body>
 
 </html>
