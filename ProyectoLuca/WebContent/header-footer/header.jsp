@@ -142,45 +142,66 @@
 		<div class="container">
 			<div id="responsive-nav">
 				<!-- category nav -->
-				<form method="POST" action="FilmListSelect.do">
+				
 				<div class="category-nav show-on-click">
 					<span class="category-header">Genero <i class="fa fa-list"></i></span>
+					
 					<ul class="category-list">
 					
+						<form method="POST" action="FilmListSelect.do">
 						<li>
 						<button class="main-btn quick-view" name="genre" value="ACTION" style="border: 0px">
-						<a href="#">Acci&oacute;n </a>
-						</button></li>
+						<p>Acci&oacute;n </p>
+						</button>
+
+						</li>
 						<li>
 						<button class="main-btn quick-view" name="genre" value="ANIMATION" >
-						<a href="#">Animaci&oacute;n</a>
-						</button></li>
+						<p>Animaci&oacute;n</p>
+						</button>
+
+						</li>
 						<li >
+
 						<button class="main-btn quick-view" name="genre" value="SCIENCE">
-						<a href="#">Ciencia ficci&oacute;n </a>
-						</button></li>
-						<li><button class="main-btn quick-view" name="genre" value="COMEDY">
-						<a href="#">Comedia</a>
-						</button></li>
+						<p>Ciencia ficci&oacute;n </p>
+						</button>
+
+						</li>
+						<li>
+
+						<button class="main-btn quick-view" name="genre" value="COMEDY">
+						<p>Comedia</p>
+						</button>
+						</li>
+						
 						<li>
 						<button class="main-btn quick-view" name="genre" value="DRAMA">
-						<a href="#">Drama</a>
-						</button></li>
+						<p>Drama</p>
+						</button>
+						</li>
+						
 						<li>
-						<button class="main-btn quick-view" name="genre" value="DOCUMENT">
-						<a href="#">Documentales </a>
-						</button></li>
+						<button class="main-btn quick-view" name="genre" value="DOCUMENTARY">
+						<p>Documentales </p>
+						</button>
+						</li>
+						
 						<li>
 						<button class="main-btn quick-view" name="genre" value="TERROR">
-						<a href="#">Terror</a>
-						</button></li>
+						<p>Terror</p>
+						</button>
+						</li>
 						<li>
 						<button class="main-btn quick-view" name="genre" value="THRILLER">
-						<a href="#">Thriller</a>
-						</button></li>
+						<p>Thriller</p>
+						</button>	
+						</li>
+						</form>
+						
 					</ul>
 				</div>
-				</form>
+				
 				<!-- /category nav -->
 
 				<!-- menu nav -->
