@@ -17,13 +17,13 @@
 <ul>
 <c:forEach var="film" items="${listFilm}">
 	<form method="POST" action="FilmSelect.do"><li>${film.title} </li>
-	<button name="id" value="${film.idFilm}"><image src = "${film.image}" ></button>
-	<li>${film.price}</li> </form>
-	<!-- <p><input type = "submit" value="Añadir carrito"/></p>-->
+	 <button name="id" value="${film.idFilm}"><image  src = "/Image/${film.image}" /> </button>
+	 <li>${film.price}</li> </form>
+	 <p><input type = "submit" value="Añadir carrito"/></p>
 	</c:forEach>
 </ul>
 
-	</main>
+	
 
 	<div class="right">
 		<h2>About</h2>
