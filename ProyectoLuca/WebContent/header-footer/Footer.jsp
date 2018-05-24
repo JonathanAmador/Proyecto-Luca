@@ -68,7 +68,7 @@
 					<div class="footer">
 						<h3 class="footer-header">Atenci&oacute;n al cliente</h3>
 						<ul class="list-links">
-							<li><a href="#">Sobre nosotros</a></li>
+							<li><a href="condicion.jsp">Condiciones de compra</a></li>
 							<li><a href="privacidad.jsp">Politica de privacidad</a></li>
 							<li><a href="#">Contactanos</a></li>
 							<li><a href="#">Ayuda</a></li>
@@ -100,7 +100,7 @@
 					<!-- footer copyright -->
 					<div class="footer-copyright">
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						<p>Proyecto LucaTica Grupo 6</p>
+						<p>Proyecto LucaTica Grupo A</p>
 						
 					</div>
 					<!-- /footer copyright -->
