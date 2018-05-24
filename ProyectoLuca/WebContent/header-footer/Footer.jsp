@@ -100,7 +100,7 @@
 					<!-- footer copyright -->
 					<div class="footer-copyright">
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						<p>Proyecto LucaTica Grupo 6</p>
+						<p>Proyecto LucaTica Grupo A</p>
 						
 					</div>
 					<!-- /footer copyright -->
