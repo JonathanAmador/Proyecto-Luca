@@ -82,7 +82,7 @@
 					<div class="product product-single">
 
 						<div class="product-body">
-							<form method="post" action="/UserController.do">
+							<form method="post" action="UserController.do?operacion=registrar">
 								<div class="container">
 									<h1>Registrate</h1>
 									<p>Rellena todos los campos.</p>
@@ -125,10 +125,10 @@
 											style="color: dodgerblue">Terminos & Condicones</a>.
 									</p>
 
-									<div class="clearfix">
+									
 										<button type="button" class="cancelbtn">Cancelar</button>
-										<button type="submit" class="signupbtn">Registrate</button>
-									</div>
+										<button type="submit" value="enviar">Registrate</button>
+									
 								</div>
 							</form>
 
@@ -156,7 +156,7 @@
 							<h2>Iniciar sesi&oacute;n</h2>
 							<p>Rellena todos los campos.</p>
 
-							<form method="POST" action="">
+							<form method="POST" action="UserController.do?operacion=login">
 
 								<div class="container">
 									<p>

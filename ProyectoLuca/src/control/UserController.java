@@ -19,7 +19,7 @@ import services.UserService;
  * Servlet implementation class UserController
  */
 
-@WebServlet(name = "FilmListSelect", urlPatterns = { "/UserController.do" }, asyncSupported = false)
+@WebServlet(name = "UserController", urlPatterns = { "/UserController.do" }, asyncSupported = false)
 public class UserController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -42,16 +42,26 @@ public class UserController extends HttpServlet {
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, SQLException {
 		String operacion;
+		System.out.println("Entrando en operacion");
 		try {
 			operacion = request.getParameter("operacion");
+			System.out.println(operacion);
 			IUserService op = new UserService();
 			if (operacion.equals("registrar")) {
+				System.out.println("Entrando en registrar");
 				boolean result = op.addUser(recogerDatos(request));
+				String respuesta="index.jsp";
+				
 				if(result){
+					
 					request.setAttribute("mensaje", "Dado de alta correctamente");
 				}else{
 					response.sendRedirect("Error.jsp?error=El usuario ya existe");
 				}
+				
+				
+				RequestDispatcher view = request.getRequestDispatcher(respuesta);
+				view.forward(request, response);
 				
 				System.out.println(result);// hacer algo cuando sea true o false
 			} else if (operacion.equals("fichaUsuario")) {
@@ -125,7 +135,7 @@ public class UserController extends HttpServlet {
 		user.setName(request.getParameter("name"));
 		user.setSurname(request.getParameter("surname"));
 		user.setEmail(request.getParameter("mail"));
-		user.setPass(request.getParameter("password"));
+		user.setPass(request.getParameter("pass"));
 		user.setAddress(request.getParameter("address"));
 		int phone = 0;
 		if (request.getParameter("phone") != "") {
@@ -134,6 +144,7 @@ public class UserController extends HttpServlet {
 			phone = 0;
 		}
 		user.setPhone(phone);
+		System.out.println(user);
 
 		return user;
 	}

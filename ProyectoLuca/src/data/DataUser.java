@@ -87,7 +87,8 @@ public class DataUser implements IDataUser {
 		try {
 			Statement sentencia = Conexion.openStatement();
 			synchronized (sentencia) {
-				sentencia.executeQuery(
+				System.out.println("Insertando usuario:"+user);
+				sentencia.executeUpdate(
 						"INSERT INTO `bd_film`.`user` (`name`, `surname`, `mail`, `password`, `address`, `phone`) VALUES ('"
 								+ user.getName() + "', '" + user.getSurname() + "', '" + user.getEmail() + "', '"
 								+ user.getPass() + "', '" + user.getAddress() + "', '" + user.getPhone() + "');");
@@ -140,21 +141,25 @@ public class DataUser implements IDataUser {
 		try {
 			Statement sentencia = Conexion.openStatement();
 			synchronized (sentencia) {
-				result = sentencia.executeQuery("SELECT * FROM bd_film.user;");
+				//result = 8;
+						if(sentencia.executeQuery("SELECT * FROM bd_film.user where mail like '"+mail+"' and password like '"+pass+"';") != null){
+							System.out.println("entrando en select");
+							result = sentencia.executeQuery("SELECT * FROM bd_film.user where mail='"+mail+"' and password='"+pass+"';");
+							System.out.println(result.toString());
+						}
 			}
 			if (!result.next()) {
+				System.out.println("No hay usuario "+new User(result.getInt(1),result.getString(2),result.getString(3),result.getString(4),result.getString(5),result.getString(6),result.getInt(7)) );
 				return null;
 			} else {
-				result.beforeFirst();
-				while (result.next() && isUser == true) {
-					if (mail==result.getString(4) && pass == result.getString(5)) {
-						isUser = true;
-						user = new User(result.getInt(1),result.getString(2),result.getString(3),result.getString(4),result.getString(5),result.getString(6),result.getInt(7));
-					}
-				}
+				isUser=true;
+				user = new User(result.getInt(1),result.getString(2),result.getString(3),result.getString(4),result.getString(5),result.getString(6),result.getInt(7));
 			}
+				System.out.println(isUser);
 		} catch (SQLException e2) {
+			System.out.println("Exception"+e2.toString());
 			throw e2;
+			
 		} finally {
 			if (result != null) {
 				try {
