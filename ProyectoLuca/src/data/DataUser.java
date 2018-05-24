@@ -216,8 +216,9 @@ public class DataUser implements IDataUser {
 		} catch (SQLException e2) {
 			System.out.println("Exception"+e2.toString());
 		} finally {
-			if (isUser == true) {
+			if (!result.next()) {
 				try {
+					System.out.println("cerrando resultset");
 					result.close();
 				} catch (SQLException e) {
 					e.printStackTrace();

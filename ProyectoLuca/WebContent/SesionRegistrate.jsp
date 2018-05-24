@@ -123,7 +123,7 @@
 											required size="50">
 									<p>
 									
-										Al crear tu cuenta estas acceptando nuestros <a href="#"
+										Al crear tu cuenta estas acceptando nuestros <a href="condicion.jsp"
 											style="color: dodgerblue">Terminos & Condicones</a>.
 									</p>
 
@@ -177,7 +177,7 @@
 											name="pass" required size="50">
 									</p>
 
-									<button type="submit">Inicia sesi&oacute;n</button>
+									<button type="submit" vale="enviar">Inicia sesi&oacute;n</button>
 									<p>
 										<label> <input type="checkbox" checked="checked"
 											name="remember"> Remember me

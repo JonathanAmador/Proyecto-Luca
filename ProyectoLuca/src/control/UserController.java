@@ -30,9 +30,11 @@ public class UserController extends HttpServlet {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	/**
-	 * Método que recibe un operación a realizar y la hace o manda a hacer a otro método
+	 * Método que recibe un operación a realizar y la hace o manda a hacer a
+	 * otro método
+	 * 
 	 * @param request
 	 * @param response
 	 * @throws ServletException
@@ -42,43 +44,40 @@ public class UserController extends HttpServlet {
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, SQLException {
 		String operacion;
-		System.out.println("Entrando en operacion");
-		try {
-			operacion = request.getParameter("operacion");
-			System.out.println(operacion);
-			IUserService op = new UserService();
-			if (operacion.equals("registrar")) {
-				System.out.println("Entrando en registrar");
-				boolean result = op.addUser(recogerDatos(request));
-				String respuesta="index.jsp";
-				
-				if(result){
-					
-					request.setAttribute("mensaje", "Dado de alta correctamente");
-				}else{
-					response.sendRedirect("Error.jsp?error=El usuario ya existe");
-				}
-				
-				
-				RequestDispatcher view = request.getRequestDispatcher(respuesta);
-				view.forward(request, response);
-				
-				System.out.println(result);// hacer algo cuando sea true o false
-			} else if (operacion.equals("fichaUsuario")) {
-				showUser(request,response,op);
-			} else if (operacion.equals("login")) {
-				login(request,response, op);
-				
-			}
-		} catch (Exception e) {
+		operacion = request.getParameter("operacion");
+		System.out.println(operacion);
+		IUserService op = new UserService();
+		if (operacion.equals("registrar")) {
+			System.out.println("Entrando en registrar");
+			boolean result = op.addUser(recogerDatos(request));
+			String respuesta = "index.jsp";
 
+			if (result) {
+
+				request.setAttribute("mensaje", "Dado de alta correctamente");
+			} else {
+				response.sendRedirect("Error.jsp?error=El usuario ya existe");
+			}
+
+			RequestDispatcher view = request.getRequestDispatcher(respuesta);
+			view.forward(request, response);
+
+			System.out.println(result);// hacer algo cuando sea true o false
+		} else if (operacion.equals("fichaUsuario")) {
+			showUser(request, response, op);
+		} else if (operacion.equals("login")) {
+			System.out.println("Entrando en login");
+			login(request, response, op);
 		}
+		System.out.println("Saliendo de operacion");
+
 	}
-	
-	
+
 	/**
-	 * Coge el parametro de id de usuario y pide el usuario que se indentifica con este a la capa de servicios
-	 * Luego le da en control al jsp correspondiente
+	 * Coge el parametro de id de usuario y pide el usuario que se indentifica
+	 * con este a la capa de servicios Luego le da en control al jsp
+	 * correspondiente
+	 * 
 	 * @param request
 	 * @param response
 	 * @param op
@@ -86,7 +85,8 @@ public class UserController extends HttpServlet {
 	 * @throws ServletException
 	 * @throws IOException
 	 */
-	private void showUser(HttpServletRequest request, HttpServletResponse response, IUserService op) throws SQLException, ServletException, IOException {
+	private void showUser(HttpServletRequest request, HttpServletResponse response, IUserService op)
+			throws SQLException, ServletException, IOException {
 		int id = 0;
 		if (request.getParameter("id") != null) {
 			id = Integer.parseInt(request.getParameter("id"));
@@ -95,13 +95,15 @@ public class UserController extends HttpServlet {
 		}
 		request.setAttribute("usuario", op.showUser(id));
 		RequestDispatcher view = request.getRequestDispatcher("resultUser.jsp");
-		view.forward(request, response);	
+		view.forward(request, response);
 	}
 
 	/**
-	 * Coge el parametro de mail y password, luego manda a la capa de servicios si existe ese usuario con esa contraseña,
-	 * si existe le devolvera el usuario con todos los datos y crea una sesion con él
-	 * Luego le da en control al jsp correspondiente
+	 * Coge el parametro de mail y password, luego manda a la capa de servicios
+	 * si existe ese usuario con esa contraseña, si existe le devolvera el
+	 * usuario con todos los datos y crea una sesion con él Luego le da en
+	 * control al jsp correspondiente
+	 * 
 	 * @param request
 	 * @param response
 	 * @param op
@@ -109,25 +111,28 @@ public class UserController extends HttpServlet {
 	 * @throws ServletException
 	 * @throws IOException
 	 */
-	private void login(HttpServletRequest request, HttpServletResponse response, IUserService op) throws SQLException, ServletException, IOException{
+	private void login(HttpServletRequest request, HttpServletResponse response, IUserService op)
+			throws SQLException, ServletException, IOException {
 		String mail = request.getParameter("mail");
 		String pass = request.getParameter("pass");
 		User cliente = new User();
 		cliente.setEmail(mail);
 		cliente.setPass(pass);
 		cliente = op.checkUser(mail, pass);
-		if(cliente != null){
+		if (cliente != null) {
 			System.out.println("Creando sesion");
 			HttpSession sesion = request.getSession();
 			sesion.setAttribute("cliente", cliente);
 		}
-		
+
 		RequestDispatcher view = request.getRequestDispatcher("index.jsp");
-        view.forward(request, response);
+		view.forward(request, response);
 	}
 
 	/**
-	 * Crea un modelo usuario y guarda en el los datos que le han llegado, a continuación lo devuelve 
+	 * Crea un modelo usuario y guarda en el los datos que le han llegado, a
+	 * continuación lo devuelve
+	 * 
 	 * @param request
 	 * @return el usuario
 	 */

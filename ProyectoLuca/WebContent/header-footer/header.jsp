@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="styleadvsearch.css">
@@ -208,7 +209,7 @@
 				<div class="menu-nav">
 					<span class="menu-header">Menu <i class="fa fa-bars"></i></span>
 					<ul class="menu-list">
-						<li><a href="index.html">Inico</a></li>
+						<li><a href="index.jsp">Inico</a></li>
 						<li><a href="#">Sobre nosotros</a></li>
 						<li><a href="">Envio</a></li>
 						<li><a href="">Contactanos
