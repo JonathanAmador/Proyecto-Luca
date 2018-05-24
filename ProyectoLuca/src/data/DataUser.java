@@ -192,11 +192,9 @@ public class DataUser implements IDataUser {
 			Statement sentencia = Conexion.openStatement();
 			synchronized (sentencia) {
 				//result = 8;
-						if(sentencia.executeQuery("SELECT * FROM bd_film.user where mail like '"+mail+"' and password like '"+pass+"';") != null){
-							System.out.println("entrando en select");
+					System.out.println("mail:"+mail+" password: "+pass);
 							result = sentencia.executeQuery("SELECT * FROM bd_film.user where mail='"+mail+"' and password='"+pass+"';");
 							System.out.println(result.toString());
-						}
 			}
 			if (!result.next()) {
 				System.out.println("No hay usuario "+new User(result.getInt(1),result.getString(2),result.getString(3),result.getString(4),result.getString(5),result.getString(6),result.getInt(7)) );
@@ -217,10 +215,8 @@ public class DataUser implements IDataUser {
 				System.out.println(isUser);
 		} catch (SQLException e2) {
 			System.out.println("Exception"+e2.toString());
-			throw e2;
-			
 		} finally {
-			if (result != null) {
+			if (isUser == true) {
 				try {
 					result.close();
 				} catch (SQLException e) {

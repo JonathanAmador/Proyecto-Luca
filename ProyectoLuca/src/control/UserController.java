@@ -111,12 +111,13 @@ public class UserController extends HttpServlet {
 	 */
 	private void login(HttpServletRequest request, HttpServletResponse response, IUserService op) throws SQLException, ServletException, IOException{
 		String mail = request.getParameter("mail");
-		String pass = request.getParameter("password");
+		String pass = request.getParameter("pass");
 		User cliente = new User();
 		cliente.setEmail(mail);
 		cliente.setPass(pass);
 		cliente = op.checkUser(mail, pass);
 		if(cliente != null){
+			System.out.println("Creando sesion");
 			HttpSession sesion = request.getSession();
 			sesion.setAttribute("cliente", cliente);
 		}
