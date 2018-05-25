@@ -1,7 +1,13 @@
 package model;
 
-public class User {
+import java.io.Serializable;
 
+public class User implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int id_user;
 	private String name;
 	private String surname;
@@ -14,7 +20,7 @@ public class User {
 		super();
 	}
 
-	public User(int id_user, String name, String surname, String email, String pass, String address, int phone) {
+	public User(int id_user, String name, String surname, String email, String pass, String address, int phone)  {
 		super();
 		this.id_user = id_user;
 		this.name = name;

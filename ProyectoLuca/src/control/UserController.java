@@ -53,7 +53,6 @@ public class UserController extends HttpServlet {
 			String respuesta = "index.jsp";
 
 			if (result) {
-
 				request.setAttribute("mensaje", "Dado de alta correctamente");
 			} else {
 				response.sendRedirect("Error.jsp?error=El usuario ya existe");
@@ -94,7 +93,7 @@ public class UserController extends HttpServlet {
 			System.out.println("Error dato vacio");
 		}
 		request.setAttribute("usuario", op.showUser(id));
-		RequestDispatcher view = request.getRequestDispatcher("resultUser.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/resultUser.jsp");
 		view.forward(request, response);
 	}
 
@@ -121,12 +120,19 @@ public class UserController extends HttpServlet {
 		cliente = op.checkUser(mail, pass);
 		if (cliente != null) {
 			System.out.println("Creando sesion");
-			HttpSession sesion = request.getSession();
-			sesion.setAttribute("cliente", cliente);
+			//HttpSession sesion = request.getSession();
+			//sesion.setAttribute("cliente", cliente);
+			HttpSession session = request.getSession(true);
+			session.setAttribute("Id", String.valueOf(cliente.getId_user()));
+			session.setAttribute("Nombre", cliente.getName());
+			session.setAttribute("Apellido", cliente.getSurname());
+			request.setAttribute("mensaje", "Autenticacion correcta");
+			RequestDispatcher view = request.getRequestDispatcher("/index.jsp");
+			view.forward(request, response);
+		} else {
+			response.sendRedirect("/index.jsp");
+			return;
 		}
-
-		RequestDispatcher view = request.getRequestDispatcher("index.jsp");
-		view.forward(request, response);
 	}
 
 	/**
@@ -162,6 +168,7 @@ public class UserController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
+			System.out.println("entrando por el get");
 			processRequest(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

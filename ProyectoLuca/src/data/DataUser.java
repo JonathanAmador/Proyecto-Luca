@@ -200,23 +200,14 @@ public class DataUser implements IDataUser {
 				System.out.println("No hay usuario "+new User(result.getInt(1),result.getString(2),result.getString(3),result.getString(4),result.getString(5),result.getString(6),result.getInt(7)) );
 				return null;
 			} else {
-
 				isUser=true;
 				user = new User(result.getInt(1),result.getString(2),result.getString(3),result.getString(4),result.getString(5),result.getString(6),result.getInt(7));
-				result.beforeFirst();
-				while (result.next() && isUser == true) {
-					if (mail == result.getString(4) && pass == result.getString(5)) {
-						isUser = true;
-						user = new User(result.getInt(1), result.getString(2), result.getString(3), result.getString(4),
-								result.getString(5), result.getString(6), result.getInt(7));
-					}
-				}
 			}
 				System.out.println(isUser);
 		} catch (SQLException e2) {
 			System.out.println("Exception"+e2.toString());
 		} finally {
-			if (!result.next()) {
+			if (result != null) {
 				try {
 					System.out.println("cerrando resultset");
 					result.close();

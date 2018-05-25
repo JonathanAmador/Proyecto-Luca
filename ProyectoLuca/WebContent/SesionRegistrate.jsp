@@ -124,7 +124,7 @@
 									<p>
 									
 										Al crear tu cuenta estas acceptando nuestros <a href="condicion.jsp"
-											style="color: dodgerblue">Terminos & Condicones</a>.
+											style="color: dodgerblue">Terminos y Condicones</a>.
 									</p>
 
 									
@@ -158,7 +158,7 @@
 							<h2>Iniciar sesi&oacute;n</h2>
 							<p>Rellena todos los campos.</p>
 
-							<form method="POST" action="UserController.do?operacion=login">
+							<form method="post" action="UserController.do?operacion=login">
 
 								<div class="container">
 									<p>

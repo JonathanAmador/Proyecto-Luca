@@ -9,7 +9,6 @@
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 	<title>Proyecto LucaTic grupo A</title>
-
 	<!-- Google font -->
   	<link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
 
@@ -39,6 +38,11 @@
 </head>
 
 <body>
+<%
+	if ("session" != null) {
+		System.out.println("Nombre del usuario: "+session.getAttribute("Nombre"));
+	}
+%>
 	<!-- HEADER -->
 	<header>
 		<!-- top Header -->
@@ -47,7 +51,6 @@
 				<div class="pull-left">
 					<span>Proyecto LucaTic grupo A</span>
 				</div>
-				
 			</div>
 		</div>
 		<!-- /top Header -->
@@ -98,7 +101,7 @@
 									<span class="qty">3</span>
 								</div>
 								<strong class="text-uppercase">Mi carrito:</strong>
-								<br>
+								<br />
 								<span>35.20&euro;</span>
 							</a>
 							<div class="custom-menu">
@@ -106,7 +109,7 @@
 									<div class="shopping-cart-list">
 										<div class="product product-widget">
 											<div class="product-thumb">
-												<img src="#" alt="">
+												
 											</div>
 											<div class="product-body">
 												<h3 class="product-price">32.50&euro; <span class="qty">x3</span></h3>
@@ -116,7 +119,7 @@
 										</div>
 										<div class="product product-widget">
 											<div class="product-thumb">
-												<img src="#" alt="">
+												
 											</div>
 											<div class="product-body">
 												<h3 class="product-price">32.50&euro; <span class="qty">x3</span></h3>
@@ -156,9 +159,10 @@
 				<!-- category nav -->
 				<div class="category-nav">
 					<span class="category-header">Generos <i class="fa fa-list"></i></span>
+					<form method="POST" action="FilmListSelect.do">
 					<ul class="category-list">
 						
-						<form method="POST" action="FilmListSelect.do">
+						
 						<li>
 						<button class="main-btn quick-view" name="genre" value="ACTION" style="border: 0px">
 						<p>Acci&oacute;n </p>
@@ -208,9 +212,9 @@
 						<button class="main-btn quick-view" name="genre" value="THRILLER">
 						<p>Thriller</p>
 						</button>	
-						</li>
-						</form>
+						</li>	
 					</ul>
+					</form>
 				</div>
 				<!-- /category nav -->
 
@@ -275,7 +279,7 @@
 	
 <!-- FOOTER -->
 	<footer>
-		<%@include file="header-footer/Footer.jsp"%>
+		<%@include file="header-footer/Footer.jsp"%> 
 	</footer>
 	<!-- /FOOTER --
 
