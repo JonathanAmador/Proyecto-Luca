@@ -5,7 +5,8 @@
 
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"
+	charset="UTF-8">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 <title>Proyecto LucaTic grupo A</title>
@@ -42,7 +43,7 @@
 <body>
 	<!-- HEADER -->
 	<header>
-		<%@include file="header-footer/header.jsp" %>
+		<%@include file="header-footer/header.jsp"%>
 	</header>
 	<!-- /HEADER -->
 
@@ -61,55 +62,34 @@
 	<div class="section">
 		<!-- container -->
 		<div class="container">
-	
 			<!-- row -->
 			<div class="row">
-				
-
 				<!-- Product Single -->
+				
 				<c:forEach var="film" items="${listFilm}">
+					<div class="col-md-4 col-sm-6 col-xs-6" >
 					<form method="POST" action="FilmSelect.do">
-						<div class="col-md-4 col-sm-6 col-xs-6">
-							<div class="product product-single">
-								<div class="product-thumb">
-									<div class="product-label">
-										<span>New</span> <span class="sale">-20%</span>
+							<button class="main-btn quick-view" name="id" value="${film.idFilm}" width="320">
+								<div class="product product-single">
+									<div class="product-thumb">
+										<image src="Image/${film.image}" height="500" width="300">
 									</div>
-									<button class="main-btn quick-view" name="id"
-										value="${film.idFilm}">
-										<i class="fa fa-search-plus"></i> Quick view
-									</button>
-									<image src="Image/${film.image}">
-								</div>
-								<div class="product-body">
-									<h3 class="product-price">${film.price}<del
-											class="product-old-price">$45.00</del>
-									</h3>
-									<div class="product-rating">
-										<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star-o empty"></i>
-									</div>
-									<h2 class="product-name">
-										<a href="#">${film.title}</a>
-									</h2>
-									<div class="product-btns">
-										<button class="main-btn icon-btn">
-											<i class="fa fa-heart"></i>
-										</button>
-										<button class="main-btn icon-btn">
-											<i class="fa fa-exchange"></i>
-										</button>
+									 <div class="product-body">
+										<h3 class="product-price">${film.price}&euro;</h3>
+										<h4 class="product-name">${film.title}</h4>
+										<!-- <div class="product-btns">
 										<button class="primary-btn add-to-cart">
 											<i class="fa fa-shopping-cart"></i> Add to Cart
 										</button>
-									</div>
-									</button>
-								</div>
-							</div>
-						</div>
+										</div>-->
+									 </div> 
+							  </div>
+							</button>
+						
 					</form>
+					</div>
 				</c:forEach>
+				
 				<!-- /Product Single -->
 
 			</div>
@@ -121,14 +101,14 @@
 
 	<footer>
 
-<!-- FOOTER -->
-	<header>
-		<%@include file="header-footer/Footer.jsp" %>
-	</header>
-	<!-- /FOOTER -->
+		<!-- FOOTER -->
+		<header>
+			<%@include file="header-footer/Footer.jsp"%>
+		</header>
+		<!-- /FOOTER -->
 
 
-</footer>
+	</footer>
 
 	<!-- jQuery Plugins -->
 	<script src="js/jquery.min.js"></script>
