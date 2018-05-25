@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Film;
+import model.TypeGenre;
 import model.User;
 import services.FilmService;
 import services.IFilmService;
@@ -41,18 +42,49 @@ public class FilmUpdate extends HttpServlet {
     	System.out.println(operacion);
     	IFilmService op=new FilmService();
     	if(operacion.equals("addFilm")){
+    		//AGREGAR
     		System.out.println("Agregando nueva pelicula");
     		boolean result = op.addFilm(recogerDatos(request));
-    		String respuesta= "addFilm.jsp";
-    	}else if(operacion.equals("updateFilm")){
+    		response.sendRedirect("listado");
+    	}else if(operacion.equals("detalle")){
+    		//DETALLES
+    		int id = 0;
+    		if (request.getParameter("id") != null) {
+    			id = Integer.parseInt(request.getParameter("id"));
+    		} else {
+    			System.out.println("ERRRRRRRRRRRRRRRRRRRRRRORRRRRRRRRRRRRRRRR dato vacio");
+    		}
+
+    		// PASO 02: Recopilar la respuesta.
+    		Film result = filmService.showFilm(id);
+
+    		request.setAttribute("film", result);
+
+    		// PASO 03: Salir.
+    		RequestDispatcher view = request.getRequestDispatcher("resultFilm.jsp"); // crear otro jsp para mostrarlos en tablas
+    		view.forward(request, response);
+    		// request.getRequestDispatcher("result.jsp").forward(request,
+    		// response);
+
+    	
+    	}
+    		else if(operacion.equals("updateFilm")){
+    		//ACTUALIZAR
     		System.out.println("Actualizando datos de pelicula");
     		op.updateFilm(recogerDatos(request));
-    		String result="updateFilm.jsp";
+    		
+    		response.sendRedirect("listado");
     	}else if (operacion.equals("deleteFilm")){
+    		//BORRAR 
     		System.out.println("Borrando datos de pelicula");
     		op.deleteFilm(recogerDatos(request));
-    		String result="deleteFilm.jsp";    	
-    	}
+    		response.sendRedirect("listado");
+    	} else if (operacion.equals("listado")) {
+            // LISTADO
+            /*request.setAttribute("films", op.showAllFilm());
+            RequestDispatcher view = request.getRequestDispatcher("listado.jsp");
+            view.forward(request, response);*/
+        }
         
     }catch (Exception e){
     	throw e;
@@ -78,26 +110,38 @@ public class FilmUpdate extends HttpServlet {
 		doGet(request, response);
 	}
 
-	
-	 public Film recogerDatos(HttpServletRequest request1) {
+	 public Film recogerDatos(HttpServletRequest request) {
      	
 	    	Film film = new Film();
-	    		film.setTitle(request1.getParameter("title"));
-	    		film.setDirector(request1.getParameter("director"));
-	    		film.setSynopsis(request1.getParameter("synopsis"));
+	    		film.setTitle(request.getParameter("title"));
+	    		film.setDirector(request.getParameter("director"));
+	    		film.setSynopsis(request.getParameter("synopsis"));
 	    		
-	    		int price
-	    		if (request.getParameter("price") != "") {
-	    			phone = Integer.parseInt(request.getParameter("phone"));
+	    		int price=0;
+	    		int year=0;
+	    		if (request.getParameter("price, year") != "" ) {
+	    			price = Integer.parseInt(request.getParameter("price"));
+	    			year = Integer.parseInt(request.getParameter("year"));
+	    			
+	    			
 	    		} else {
-	    			phone = 0;
+	    			price = 0;
+	    			year=0;
 	    		}
 	    		
-	    		film.setPrice(request1.getParameter("price"));
-	    		film.setYear(request1.getParameter("year"));
-	    		film.setGenre(request1.getParameter("genre"));
-	    		film.setImage(request1.getParameter("imagen"));
-	    		film.setDuration(request1.getParameter("duration"));
+	    		TypeGenre genre = TypeGenre.ALL_GENRE;
+	    		for (TypeGenre a : TypeGenre.values()) {
+	    			if (a.toString().equals(request.getParameter("genre"))) {
+	    				genre = a;
+
+	    			}
+	    		}
+	    		
+	    		film.setPrice(price);
+	    		film.setYear(year);
+	    		film.setGenre(genre);
+	    		film.setImage(request.getParameter("imagen"));
+	    		film.setDuration(request.getParameter("duration"));
 	    		
 	    		
 	   
