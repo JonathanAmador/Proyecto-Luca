@@ -81,9 +81,9 @@ public class FilmUpdate extends HttpServlet {
     		response.sendRedirect("listado");
     	} else if (operacion.equals("listado")) {
             // LISTADO
-            /*request.setAttribute("films", op.showAllFilm());
+            request.setAttribute("films", op.showAllFilm());
             RequestDispatcher view = request.getRequestDispatcher("listado.jsp");
-            view.forward(request, response);*/
+            view.forward(request, response);
         }
         
     }catch (Exception e){

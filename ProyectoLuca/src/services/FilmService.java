@@ -94,4 +94,10 @@ public class FilmService implements IFilmService {
 		return dataFilm.showNextFilm();
 	}
 
+	@Override
+	public List<Film> showAllFilm() throws SQLException {
+		// TODO Auto-generated method stub
+		return dataFilm.showAllFilm();
+	}
+
 }

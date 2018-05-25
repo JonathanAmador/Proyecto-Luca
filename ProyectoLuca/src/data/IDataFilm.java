@@ -75,5 +75,7 @@ public interface IDataFilm {
 	 */
 	
 	public List<Film> showNextFilm() throws SQLException;
+	
+	public List<Film> showAllFilm() throws SQLException;
 
 }
