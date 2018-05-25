@@ -1,9 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html" ; charset="UTF-8">
 <title>Insert title here</title>
 <head>
 <meta charset="UTF-8">
@@ -15,199 +16,197 @@
 <script src="include.js"></script>
 </head>
 <body>
-<header>
-		<!-- top Header -->
-		<div id="top-header">
-			<div class="container">
-				<div class="pull-left">
-					<span>Proyecto LucaTic grupo A</span>
-				</div>
-
+	<header> <!-- top Header -->
+	<div id="top-header">
+		<div class="container">
+			<div class="pull-left">
+				<span>Proyecto LucaTic grupo A</span>
 			</div>
+
 		</div>
-		<!-- /top Header -->
-
-		<!-- header -->
-		<div id="header">
-			<div class="container">
-				<div class="pull-left">
-					<!-- Logo -->
-					<div class="header-logo">
-						<a class="logo" href="index.jsp">
-							<h1>Movie<span style="color: orangered">Hunter</span></h1>
-						</a>
-					</div>
-					<!-- /Logo -->
-
-
-					<!-- Search -->
-					<div class="header-search">
-						<form method="POST" action="FilmListSelect.do">
-							<input type="text" placeholder="Busca el titulo de la pelicula..."
-								name="title" size="50"> <input class="search-btn"
-								id="buscar" type="submit" value="Buscar" />
-						</form>
-						<a href="advsSearch.jsp" class="advsearch">Busqueda avazada</a>
-
-					</div>
-					<!-- /Search -->
+	</div>
+	<!-- /top Header --> <!-- header -->
+	<div id="header">
+		<div class="container">
+			<div class="pull-left">
+				<!-- Logo -->
+				<div class="header-logo">
+					<a class="logo" href="index.jsp">
+						<h1>
+							Movie<span style="color: orangered">Hunter</span>
+						</h1>
+					</a>
 				</div>
-				<div class="pull-right">
-					<ul class="header-btns">
-						<!-- Account -->
-						<li class="header-account dropdown default-dropdown">
-							<div class="dropdown-toggle" role="button" data-toggle="dropdown"
-								aria-expanded="true">
-								<div class="header-btns-icon">
-									<i class="fa fa-user-o"></i>
-								</div>
-								<%
-									if ("session" != null) {
-										System.out.println("Nombre del usuario: "+session.getAttribute("Nombre"));%>
-										<strong class="text-uppercase">Mi cuenta <i class="fa fa-caret-down"></i></strong>
-										<%
-									}
-								%>
-							</div> <a href="SesionRegistrate.jsp" class="text-uppercase">Inicio/Resgistrate</a> 
-						</li>
-						<!-- /Account -->
+				<!-- /Logo -->
 
-						<!-- Cart -->
-						<li class="header-cart dropdown default-dropdown"><a
-							class="dropdown-toggle" data-toggle="dropdown"
+
+				<!-- Search -->
+				<div class="header-search">
+					<form method="POST" action="FilmListSelect.do">
+						<input type="text" placeholder="Busca el titulo de la pelicula..."
+							name="title" size="50"> <input class="search-btn"
+							id="buscar" type="submit" value="Buscar" />
+					</form>
+					<a href="advsSearch.jsp" class="advsearch">Busqueda avazada</a>
+
+				</div>
+				<!-- /Search -->
+			</div>
+			<div class="pull-right">
+				<ul class="header-btns">
+					<!-- Account -->
+					<li class="header-account dropdown default-dropdown">
+						<div class="dropdown-toggle" role="button" data-toggle="dropdown"
 							aria-expanded="true">
-								<div class="header-btns-icon">
-									<i class="fa fa-shopping-cart"></i> <span class="qty">3</span>
-								</div> <strong class="text-uppercase">Mi carrito:</strong> <br> <span>35.20&euro;</span>
-						</a>
-							<div class="custom-menu">
-								<div id="shopping-cart">
-									<div class="shopping-cart-list">
-										<div class="product product-widget">
-											<div class="product-thumb">
-												<img src="./img/thumb-product01.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-price">
-													32.50&euro; <span class="qty">x3</span>
-												</h3>
-												<h2 class="product-name">
-													<a href="#">Product Name Goes Here</a>
-												</h2>
-											</div>
-											<button class="cancel-btn">
-												<i class="fa fa-trash"></i>
-											</button>
+							<div class="header-btns-icon">
+								<i class="fa fa-user-o"></i>
+							</div>
+							<c:if test="session.getAttribute('Nombre') !=null">
+								<strong class="text-uppercase"><i class="fa fa-caret-down">Mi cuenta head: ${cliente.getName()}</i></strong>
+							</c:if>
+						</div> <a href="SesionRegistrate.jsp" class="text-uppercase">Inicio/Resgistrate</a>
+					</li>
+					<!-- /Account -->
+
+					<!-- Cart -->
+					<li class="header-cart dropdown default-dropdown"><a
+						class="dropdown-toggle" data-toggle="dropdown"
+						aria-expanded="true">
+							<div class="header-btns-icon">
+								<i class="fa fa-shopping-cart"></i> <span class="qty">3</span>
+							</div> <strong class="text-uppercase">Mi carrito:</strong> <br> <span>35.20&euro;</span>
+					</a>
+						<div class="custom-menu">
+							<div id="shopping-cart">
+								<div class="shopping-cart-list">
+									<div class="product product-widget">
+										<div class="product-thumb">
+											<img src="./img/thumb-product01.jpg" alt="">
 										</div>
-										<div class="product product-widget">
-											<div class="product-thumb">
-												<img src="./img/thumb-product01.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-price">
-													32.50&euro; <span class="qty">x3</span>
-												</h3>
-												<h2 class="product-name">
-													<a href="#">Product Name Goes Here</a>
-												</h2>
-											</div>
-											<button class="cancel-btn">
-												<i class="fa fa-trash"></i>
-											</button>
+										<div class="product-body">
+											<h3 class="product-price">
+												32.50&euro; <span class="qty">x3</span>
+											</h3>
+											<h2 class="product-name">
+												<a href="#">Product Name Goes Here</a>
+											</h2>
 										</div>
+										<button class="cancel-btn">
+											<i class="fa fa-trash"></i>
+										</button>
 									</div>
-									<div class="shopping-cart-btns">
-										<button class="main-btn">View Cart</button>
-										<button class="primary-btn">
-											Checkout <i class="fa fa-arrow-circle-right"></i>
+									<div class="product product-widget">
+										<div class="product-thumb">
+											<img src="./img/thumb-product01.jpg" alt="">
+										</div>
+										<div class="product-body">
+											<h3 class="product-price">
+												32.50&euro; <span class="qty">x3</span>
+											</h3>
+											<h2 class="product-name">
+												<a href="#">Product Name Goes Here</a>
+											</h2>
+										</div>
+										<button class="cancel-btn">
+											<i class="fa fa-trash"></i>
 										</button>
 									</div>
 								</div>
-							</div></li>
-						<!-- /Cart -->
+								<div class="shopping-cart-btns">
+									<button class="main-btn">View Cart</button>
+									<button class="primary-btn">
+										Checkout <i class="fa fa-arrow-circle-right"></i>
+									</button>
+								</div>
+							</div>
+						</div></li>
+					<!-- /Cart -->
 
-						<!-- Mobile nav toggle-->
-						<li class="nav-toggle">
-							<button class="nav-toggle-btn main-btn icon-btn">
-								<i class="fa fa-bars"></i>
-							</button>
-						</li>
-						<!-- / Mobile nav toggle -->
-					</ul>
-				</div>
+					<!-- Mobile nav toggle-->
+					<li class="nav-toggle">
+						<button class="nav-toggle-btn main-btn icon-btn">
+							<i class="fa fa-bars"></i>
+						</button>
+					</li>
+					<!-- / Mobile nav toggle -->
+				</ul>
 			</div>
-			<!-- header -->
 		</div>
-		<!-- container -->
-	</header>
+		<!-- header -->
+	</div>
+	<!-- container --> </header>
 	<!-- /HEADER -->
-	
+
 	<!-- NAVIGATION -->
 	<div id="navigation">
 		<!-- container -->
 		<div class="container">
 			<div id="responsive-nav">
 				<!-- category nav -->
-				
+
 				<div class="category-nav show-on-click">
 					<span class="category-header">Genero <i class="fa fa-list"></i></span>
-					
+
 					<ul class="category-list">
-					
+
 						<form method="POST" action="FilmListSelect.do">
-						<li>
-						<button class="main-btn quick-view" name="genre" value="ACTION" style="border: 0px">
-						<p>Acci&oacute;n </p>
-						</button>
+							<li>
+								<button class="main-btn quick-view" name="genre" value="ACTION"
+									style="border: 0px">
+									<p>Acci&oacute;n</p>
+								</button>
 
-						</li>
-						<li>
-						<button class="main-btn quick-view" name="genre" value="ANIMATION" >
-						<p>Animaci&oacute;n</p>
-						</button>
+							</li>
+							<li>
+								<button class="main-btn quick-view" name="genre"
+									value="ANIMATION">
+									<p>Animaci&oacute;n</p>
+								</button>
 
-						</li>
-						<li >
+							</li>
+							<li>
 
-						<button class="main-btn quick-view" name="genre" value="SCIENCE">
-						<p>Ciencia ficci&oacute;n </p>
-						</button>
+								<button class="main-btn quick-view" name="genre" value="SCIENCE">
+									<p>Ciencia ficci&oacute;n</p>
+								</button>
 
-						</li>
-						<li>
+							</li>
+							<li>
 
-						<button class="main-btn quick-view" name="genre" value="COMEDY">
-						<p>Comedia</p>
-						</button>
-						</li>
-						
-						<li>
-						<button class="main-btn quick-view" name="genre" value="DRAMA">
-						<p>Drama</p>
-						</button>
-						</li>
-						
-						<li>
-						<button class="main-btn quick-view" name="genre" value="DOCUMENTARY">
-						<p>Documentales </p>
-						</button>
-						</li>
-						
-						<li>
-						<button class="main-btn quick-view" name="genre" value="TERROR">
-						<p>Terror</p>
-						</button>
-						</li>
-						<li>
-						<button class="main-btn quick-view" name="genre" value="THRILLER">
-						<p>Thriller</p>
-						</button>	
-						</li>
+								<button class="main-btn quick-view" name="genre" value="COMEDY">
+									<p>Comedia</p>
+								</button>
+							</li>
+
+							<li>
+								<button class="main-btn quick-view" name="genre" value="DRAMA">
+									<p>Drama</p>
+								</button>
+							</li>
+
+							<li>
+								<button class="main-btn quick-view" name="genre"
+									value="DOCUMENTARY">
+									<p>Documentales</p>
+								</button>
+							</li>
+
+							<li>
+								<button class="main-btn quick-view" name="genre" value="TERROR">
+									<p>Terror</p>
+								</button>
+							</li>
+							<li>
+								<button class="main-btn quick-view" name="genre"
+									value="THRILLER">
+									<p>Thriller</p>
+								</button>
+							</li>
 						</form>
-						
+
 					</ul>
 				</div>
-				
+
 				<!-- /category nav -->
 
 				<!-- menu nav -->
@@ -217,8 +216,7 @@
 						<li><a href="index.jsp">Inico</a></li>
 						<li><a href="#">Sobre nosotros</a></li>
 						<li><a href="">Envio</a></li>
-						<li><a href="">Contactanos
-						</a></li>
+						<li><a href="">Contactanos </a></li>
 					</ul>
 				</div>
 				<!-- menu nav -->

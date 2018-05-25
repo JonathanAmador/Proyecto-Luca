@@ -83,13 +83,15 @@
 								<div class="header-btns-icon">
 									<i class="fa fa-user-o"></i>
 								</div>
+								<c:if test="session.getAttribute('Nombre') !=null">
+									<strong class="text-uppercase"><i class="fa fa-caret-down">Mi cuenta if: ${cliente.getName()}</i></strong>
+								</c:if>
 								<%
-									if ("session" != null) {
-										System.out.println("Nombre del usuario: "+session.getAttribute("Nombre"));
-										String s = session.getAttribute("Nombre").toString();					
+									if (session.getAttribute("Nombre") != null) {
+										System.out.println("Nombre del usuario: "+session.getAttribute("Nombre"));	
 									}
 								%>
-								<strong class="text-uppercase">Mi cuenta <i class="fa fa-caret-down"></i></strong>	
+								<strong class="text-uppercase"><i class="fa fa-caret-down"></i></strong>	
 							</div>
 							<a href="SesionRegistrate.jsp" class="text-uppercase">Inicio</a> / <a href="#" class="text-uppercase">unete</a>
 						</li>
