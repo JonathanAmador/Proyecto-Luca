@@ -42,11 +42,11 @@
 				<!-- Search -->
 				<div class="header-search">
 					<form method="POST" action="FilmListSelect.do">
-						<input type="text" placeholder="Busca el titulo de la pelicula..."
+						<input type="text" placeholder="Busca el título de la película..."
 							name="title" size="50"> <input class="search-btn"
 							id="buscar" type="submit" value="Buscar" />
 					</form>
-					<a href="advsSearch.jsp" class="advsearch">Busqueda avazada</a>
+					<a href="advsSearch.jsp" class="advsearch">B&uacute;squeda avazada</a>
 
 				</div>
 				<!-- /Search -->
@@ -63,7 +63,7 @@
 							<c:if test="session.getAttribute('Nombre') !=null">
 								<strong class="text-uppercase"><i class="fa fa-caret-down">Mi cuenta head: ${cliente.getName()}</i></strong>
 							</c:if>
-						</div> <a href="SesionRegistrate.jsp" class="text-uppercase">Inicio/Resgistrate</a>
+						</div> <a href="SesionRegistrate.jsp" class="text-uppercase">Inicio/Resg&iacute;strate</a>
 					</li>
 					<!-- /Account -->
 
@@ -73,7 +73,7 @@
 						aria-expanded="true">
 							<div class="header-btns-icon">
 								<i class="fa fa-shopping-cart"></i> <span class="qty">3</span>
-							</div> <strong class="text-uppercase">Mi carrito:</strong> <br> <span>35.20&euro;</span>
+							</div> <strong class="text-uppercase">Mi carrito:</strong> <br> 
 					</a>
 						<div class="custom-menu">
 							<div id="shopping-cart">
@@ -83,10 +83,7 @@
 											<img src="./img/thumb-product01.jpg" alt="">
 										</div>
 										<div class="product-body">
-											<h3 class="product-price">
-												32.50&euro; <span class="qty">x3</span>
-											</h3>
-											<h2 class="product-name">
+																						<h2 class="product-name">
 												<a href="#">Product Name Goes Here</a>
 											</h2>
 										</div>
@@ -100,7 +97,7 @@
 										</div>
 										<div class="product-body">
 											<h3 class="product-price">
-												32.50&euro; <span class="qty">x3</span>
+												
 											</h3>
 											<h2 class="product-name">
 												<a href="#">Product Name Goes Here</a>
