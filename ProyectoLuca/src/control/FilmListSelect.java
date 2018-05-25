@@ -51,7 +51,6 @@ public class FilmListSelect extends HttpServlet {
 		for (TypeGenre a : TypeGenre.values()) {
 			if (a.toString().equals(request.getParameter("genre"))) {
 				genre = a;
-
 			}
 		}
 		

@@ -61,8 +61,13 @@
 								<div class="header-btns-icon">
 									<i class="fa fa-user-o"></i>
 								</div>
-								<strong class="text-uppercase">Mi cuenta <i
-									class="fa fa-caret-down"></i></strong>
+								<%
+									if ("session" != null) {
+										System.out.println("Nombre del usuario: "+session.getAttribute("Nombre"));%>
+										<strong class="text-uppercase">Mi cuenta <i class="fa fa-caret-down"></i></strong>
+										<%
+									}
+								%>
 							</div> <a href="SesionRegistrate.jsp" class="text-uppercase">Inicio/Resgistrate</a> 
 						</li>
 						<!-- /Account -->

@@ -120,9 +120,9 @@ public class UserController extends HttpServlet {
 		cliente = op.checkUser(mail, pass);
 		if (cliente != null) {
 			System.out.println("Creando sesion");
-			//HttpSession sesion = request.getSession();
-			//sesion.setAttribute("cliente", cliente);
 			HttpSession session = request.getSession(true);
+			session.setAttribute("cliente", cliente);
+			//HttpSession session = request.getSession(true);
 			session.setAttribute("Id", String.valueOf(cliente.getId_user()));
 			session.setAttribute("Nombre", cliente.getName());
 			session.setAttribute("Apellido", cliente.getSurname());

@@ -38,11 +38,7 @@
 </head>
 
 <body>
-<%
-	if ("session" != null) {
-		System.out.println("Nombre del usuario: "+session.getAttribute("Nombre"));
-	}
-%>
+
 	<!-- HEADER -->
 	<header>
 		<!-- top Header -->
@@ -87,7 +83,13 @@
 								<div class="header-btns-icon">
 									<i class="fa fa-user-o"></i>
 								</div>
-								<strong class="text-uppercase">Mi cuenta <i class="fa fa-caret-down"></i></strong>
+								<%
+									if ("session" != null) {
+										System.out.println("Nombre del usuario: "+session.getAttribute("Nombre"));
+										String s = session.getAttribute("Nombre").toString();					
+									}
+								%>
+								<strong class="text-uppercase">Mi cuenta <i class="fa fa-caret-down"></i></strong>	
 							</div>
 							<a href="SesionRegistrate.jsp" class="text-uppercase">Inicio</a> / <a href="#" class="text-uppercase">unete</a>
 						</li>
