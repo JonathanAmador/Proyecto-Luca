@@ -1,6 +1,5 @@
 package data;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.*;
@@ -8,12 +7,13 @@ import java.sql.*;
 import model.Film;
 import model.TypeGenre;
 import util.Conexion;
+import java.util.Date;
 
 public class DataFilm implements IDataFilm {
 
 	/**
-	 * Método que prepara la respuesta para motrar una lista con los
-	 * resultados obtenidos de la búsqueda del usuario.
+	 * Método que prepara la respuesta para motrar una lista con los resultados
+	 * obtenidos de la búsqueda del usuario.
 	 * 
 	 * @param title:
 	 *            Título de la película a buscar.
@@ -45,12 +45,11 @@ public class DataFilm implements IDataFilm {
 					director = "%";
 				}
 
-				
-				if(title == null){
-					title="%";
+				if (title == null) {
+					title = "%";
 				}
-				
-				if(year == 0){
+
+				if (year == 0) {
 
 					System.out.println("Entra en DATOS");
 					result = sentencia.executeQuery("SELECT * FROM bd_film.film where Title like '%" + title
@@ -151,4 +150,154 @@ public class DataFilm implements IDataFilm {
 		return listFilm.get(0);
 	}
 
+	/**
+	 * Metodo que añade nuevas peliculas a a base de datos en la tabla de film.
+	 * 
+	 * @param film:
+	 *            Objeto de tipo Film con los datos recogidos del formulario de
+	 *            registro
+	 * 
+	 * @throws SQLException:
+	 *             Excepcion que proporciona informacion de algún error con el
+	 *             acceso a la base de datos.
+	 */
+	@Override
+	public boolean addFilm(Film film) throws SQLException {
+		boolean insert = false;
+		try {
+			Statement sentencia = Conexion.openStatement();
+			synchronized (sentencia) {
+				System.out.println("Introduciendo Pelicula" + film);
+				sentencia.executeUpdate(
+						"INSERT INTO `bd_film`.`film`(`Title`, `Director`, `Synopsis`, `Price`, `Year`, `Genre`, `Imagen`, `Duration`) Values ( '"
+								+ film.getTitle() + "', '" + film.getDirector() + "', '" + film.getSynopsis() + "', '"
+								+ film.getPrice() + "', '" + film.getYear() + "', '" + film.getGenre() + "', '"
+								+ film.getImage() + "', '" + film.getDuration() + "', '");
+				insert = true;
+
+			}
+		} catch (SQLException e2) {
+			throw e2;
+		}
+		return insert;
+
+	}
+
+	/**
+	 * Metodo que actualiza peliculas en la base de datos en la tabla de film.
+	 * 
+	 * @param film:
+	 *            Objeto de tipo Film con los datos recogidos del formulario de
+	 *            registro
+	 * 
+	 * @throws SQLException:
+	 *             Excepcion que proporciona informacion de algún error con el
+	 *             acceso a la base de datos.
+	 */
+
+	@Override
+	public boolean updateFilm(Film film) throws SQLException {
+		boolean update = false;
+
+		try {
+			Statement sentencia = Conexion.openStatement();
+			synchronized (sentencia) {
+				System.out.println(" Actualizando pelicula" + film);
+				sentencia.executeUpdate("UDTADE `bd_film`SET Title='" + film.getTitle() + "',Director='"
+						+ film.getDirector() + "',Synopsis='" + film.getSynopsis() + "',Price='" + film.getYear()
+						+ "',Genre='" + film.getImage() + "',Imagen='" + film.getDuration());
+
+				update = true;
+			}
+		} catch (SQLException e2) {
+			throw e2;
+		}
+		return update;
+	}
+
+	/**
+	 * Metodo que borra peliculas de la base de datos en la tabla de film.
+	 * 
+	 * @param film:
+	 *            Objeto de tipo Film con los datos recogidos del formulario de
+	 *            registro
+	 * 
+	 * @throws SQLException:
+	 *             Excepcion que proporciona informacion de algún error con el
+	 *             acceso a la base de datos.
+	 */
+
+	@Override
+	public boolean deleteFilm(Film film) throws SQLException {
+		boolean delete = false;
+		try {
+			Statement sentencia = Conexion.openStatement();
+			synchronized (sentencia) {
+				System.out.println("Borrando :" + film);
+				sentencia.executeUpdate("DELETE FROM  bd_film='" + film + "'");
+
+				delete = true;
+
+			}
+		} catch (SQLException e2) {
+			throw e2;
+		}
+		return delete;
+
+	}
+	/**
+	 *  Metodo que crea una lista de las peliculas más actuales.
+	 *  
+	 *  @throws SQLException:
+	 *             Excepcion que proporciona informacion de algún error con el
+	 *             acceso a la base de datos.
+	 */
+
+	public List<Film> showNextFilm() throws SQLException {
+		ResultSet result = null;
+		List<Film> listNextFilm = null;
+		Date fecha = new Date();
+		int year = fecha.getYear();
+		year = year - 2;// va a guardar 2 años atras de la fecha actual
+
+		try {
+			Statement sentencia = Conexion.openStatement();
+			synchronized (sentencia) {
+				result = sentencia.executeQuery("select * FROM Film WHERE Year >  " + year + " ");
+
+				if (!result.next()) {
+					return null;
+				} else {
+					listNextFilm = new ArrayList<Film>();
+					result.beforeFirst();
+					while (result.next()) {
+
+						TypeGenre genre1 = TypeGenre.ACTION;
+						for (TypeGenre a : TypeGenre.values()) {
+							if (a.toString() == result.getString(6)) {
+								genre1 = a;
+							}
+						}
+						listNextFilm.add(new Film(result.getInt(1), result.getString(2), result.getString(3),
+								result.getString(4), result.getFloat(5), result.getInt(6), genre1, result.getString(8),
+								result.getString(9)));
+						System.out.println("Entra en result");
+
+					}
+
+				}
+			}
+		} catch (SQLException e2) {
+			throw e2;
+		} finally {
+			if (result != null) {
+				try {
+					result.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return listNextFilm;
+	}
 }

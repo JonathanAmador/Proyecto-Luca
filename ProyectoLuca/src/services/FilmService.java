@@ -48,5 +48,50 @@ public class FilmService implements IFilmService {
 	public Film showFilm(int id) throws SQLException {
 		return dataFilm.showFilm(id);
 	}
+	
+	/**
+	 * Metodo que añade nuevas peliculas a a base de datos en la tabla de film.
+	 * 
+	 *  @param film:  Objeto de tipo Film con los datos  recogidos del formulario de registro
+	 *  
+	 *  @throws SQLException: Excepcion que proporciona informacion de algún error con el acceso a la base de datos.
+	    */
+	
+	public boolean addFilm(Film film) throws SQLException {
+		return dataFilm.addFilm(film);
+	}
+	/**
+	 * Metodo que actualiza  peliculas en la base de datos en la tabla de film.
+	 * 
+	 *  @param film:  Objeto de tipo Film con los datos recogidos del formulario de registro
+	 *  
+	 *  @throws SQLException: Excepcion que proporciona informacion de algún error con el acceso a la base de datos.
+	    */
+	public boolean updateFilm(Film film) throws SQLException{
+		return dataFilm.updateFilm(film);
+	}
+	
+	/**
+	 * Metodo que borra peliculas de la base de datos en la tabla de film.
+	 * 
+	 *  @param film:  Objeto de tipo Film con los datos recogidos del formulario de registro
+	 *  
+	 *  @throws SQLException: Excepcion que proporciona informacion de algún error con el acceso a la base de datos.
+	    */
+	public boolean deleteFilm(Film film) throws SQLException{
+		return dataFilm.deleteFilm(film);
+	}
+	
+	/**
+	 *  Metodo que crea una lista de las peliculas más actuales.
+	 *  
+	 *  @throws SQLException:
+	 *             Excepcion que proporciona informacion de algún error con el
+	 *             acceso a la base de datos.
+	 */
+	
+	public List<Film> showNextFilm() throws SQLException{
+		return dataFilm.showNextFilm();
+	}
 
 }

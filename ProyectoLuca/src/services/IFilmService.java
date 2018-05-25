@@ -37,4 +37,45 @@ public interface IFilmService {
 	 *             acceso a la base de datos.
 	 */
 	public Film showFilm(int id) throws SQLException;
+	
+	/**
+	 * Metodo que añade nuevas peliculas a a base de datos en la tabla de film.
+	 * 
+	 *  @param film:  Objeto de tipo Film con los datos  recogidos del formulario de registro
+	 *  
+	 *  @throws SQLException: Excepcion que proporciona informacion de algún error con el acceso a la base de datos.
+	    */
+
+	public boolean addFilm(Film film) throws SQLException;
+	
+	/**
+	 * Metodo que actualiza  peliculas en la base de datos en la tabla de film.
+	 * 
+	 *  @param film:  Objeto de tipo Film con los datos recogidos del formulario de registro
+	 *  
+	 *  @throws SQLException: Excepcion que proporciona informacion de algún error con el acceso a la base de datos.
+	    */
+
+	public boolean updateFilm(Film film) throws SQLException;
+	
+	/**
+	 * Metodo que borra peliculas de la base de datos en la tabla de film.
+	 * 
+	 *  @param film:  Objeto de tipo Film con los datos recogidos del formulario de registro
+	 *  
+	 *  @throws SQLException: Excepcion que proporciona informacion de algún error con el acceso a la base de datos.
+	    */
+
+	public boolean deleteFilm(Film film) throws SQLException;
+	
+	/**
+	 *  Metodo que crea una lista de las peliculas más actuales.
+	 *  
+	 *  @throws SQLException:
+	 *             Excepcion que proporciona informacion de algún error con el
+	 *             acceso a la base de datos.
+	 */
+	
+	public List<Film> showNextFilm() throws SQLException;
+
 }
