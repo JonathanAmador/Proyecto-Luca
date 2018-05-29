@@ -46,7 +46,7 @@ public class FilmUpdate extends HttpServlet {
     		System.out.println("Agregando nueva pelicula");
     		boolean result = op.addFilm(recogerDatos(request));
     		response.sendRedirect("listado");
-    	}else if(operacion.equals("detalle")){
+    	}else if(operacion.equals("details")){
     		//DETALLES
     		int id = 0;
     		if (request.getParameter("id") != null) {
