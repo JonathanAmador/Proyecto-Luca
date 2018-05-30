@@ -84,7 +84,7 @@
 									<i class="fa fa-user-o"></i>
 								</div>
 								<c:if test="session.getAttribute('Nombre') !=null">
-									<strong class="text-uppercase"><i class="fa fa-caret-down">Mi cuenta if: ${cliente.getName()}</i></strong>
+								<strong class="text-uppercase"><i class="fa fa-caret-down">Mi cuenta: ${session.getAttribute("Nombre")}</i></strong>
 								</c:if>
 								<%
 									if (session.getAttribute("Nombre") != null) {

@@ -61,7 +61,7 @@
 								<i class="fa fa-user-o"></i>
 							</div>
 							<c:if test="session.getAttribute('Nombre') !=null">
-								<strong class="text-uppercase"><i class="fa fa-caret-down">Mi cuenta head: ${cliente.getName()}</i></strong>
+								<strong class="text-uppercase"><i class="fa fa-caret-down">Mi cuenta head: ${session.getAttribute('Nombre'}</i></strong>
 							</c:if>
 						</div> <a href="SesionRegistrate.jsp" class="text-uppercase">Inicio/Resg&iacute;strate</a>
 					</li>
