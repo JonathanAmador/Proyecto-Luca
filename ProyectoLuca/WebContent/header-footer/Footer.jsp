@@ -1,11 +1,10 @@
 <%@ page import="java.util.*"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 
 <head>
-	<meta charset="UTF-8">
-<meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
-<title>Insert title here</title>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
@@ -53,9 +52,9 @@
 					<div class="footer">
 						<h3 class="footer-header">My Account</h3>
 						<ul class="list-links">
-							<li><a href="#">Mi cuenta</a></li>
+							<li><a href="SesionRegistrate.jsp">Mi cuenta</a></li>
 							<li><a href="#">Carrito</a></li>
-							<li><a href="SesionRegistrate.jsp">Inicio</a></li>
+							<li><a href="index.jsp">Inicio</a></li>
 						</ul>
 					</div>
 				</div>
@@ -70,7 +69,7 @@
 						<ul class="list-links">
 							<li><a href="condicion.jsp">Condiciones de compra</a></li>
 							<li><a href="privacidad.jsp">Politica de privacidad</a></li>
-							<li><a href="#">Contactanos</a></li>
+							<li><a href="#">Cont&aacute;ctanos</a></li>
 							<li><a href="#">Ayuda</a></li>
 						</ul>
 					</div>
@@ -80,7 +79,7 @@
 				<!-- footer subscribe -->
 				<div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="footer">
-						<h3 class="footer-header">Suscribete</h3>
+						<h3 class="footer-header">Suscr&iacute;bete</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
 						<form>
 							<div class="form-group">
@@ -100,7 +99,7 @@
 					<!-- footer copyright -->
 					<div class="footer-copyright">
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						<p>Proyecto LucaTica Grupo A</p>
+						<p>Proyecto LucaTic Grupo A</p>
 						
 					</div>
 					<!-- /footer copyright -->

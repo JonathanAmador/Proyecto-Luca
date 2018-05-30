@@ -1,12 +1,14 @@
 <%@ page import="java.util.*"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>-->
 <!DOCTYPE html>
 <html>
 
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
 <meta name="viewport" content="width=device-width, initial-scale=1"
-	charset="UTF-8">
+>
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 <title>Proyecto LucaTic grupo A</title>
@@ -52,7 +54,7 @@
 		<div class="container">
 			<ul class="breadcrumb">
 				<li><a href="index.html">Inicio</a></li>
-				<li class="active">Resultado de tu busqueda</li>
+				<li class="active">Resultado de tu b&uacute;squeda</li>
 			</ul>
 		</div>
 	</div>

@@ -51,7 +51,7 @@
 		<div class="container">
 			<ul class="breadcrumb">
 				<li><a href="index.html">Inicio</a></li>
-				<li class="active">Resultado de tu busqueda</li>
+				<li class="active">Resultado de tu b&uacute;squeda</li>
 			</ul>
 		</div>
 	</div>
@@ -85,7 +85,7 @@
 						<div class="product-body">
 							<form method="post" action="UserController.do?operacion=registrar">
 								<div class="container">
-									<h1>Registrate</h1>
+									<h1>Reg&iacute;strate</h1>
 									<p>Rellena todos los campos.</p>
 
 
@@ -100,20 +100,20 @@
 										<input type="text" placeholder="Introduce tu apellido"
 											name="surname" required size="50">
 									<p>
-										<label for="address"><b>Direccion:*</b></label>
+										<label for="address"><b>Direcci&oacute;n:*</b></label>
 									<p>
 										<input type="text" placeholder="Introduce tu nombre"
 											name="address" required size="50">
 									<p>
-										<label for="phone"><b>Numero de telefono:*</b></label>
+										<label for="phone"><b>N&uacute;mero de tel&eacute;fono:*</b></label>
 									<p>
-										<input type="number" placeholder="Numero de telefono"
+										<input type="number" placeholder="Número de teléfono"
 											name="phone" required size="10">
 									<p>
-										<label for="mail"><b>Correo electronio:*</b></label>
+										<label for="mail"><b>Correo electr&oacute;nico:*</b></label>
 									<p>
 										<input type="email"
-											placeholder="Introduce tu correo electronico" name="mail"
+											placeholder="Introduce tu correo electrónico" name="mail"
 											required size="50">
 									<p>
 										<label for="pass"><b>Contrase&ntilde;a:*</b></label>
