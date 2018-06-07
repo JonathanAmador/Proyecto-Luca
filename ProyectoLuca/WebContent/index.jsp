@@ -47,6 +47,11 @@
 				<div class="pull-left">
 					<span>Proyecto LucaTic grupo A</span>
 				</div>
+				<div class="pull-right">
+					<ul class="header-top-links">
+						<li><a href="FilmUpdate?operacion=listado">Back Office</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 		<!-- /top Header -->
@@ -93,7 +98,7 @@
 								%>
 								<strong class="text-uppercase"><i class="fa fa-caret-down"></i></strong>	
 							</div>
-							<a href="SesionRegistrate.jsp" class="text-uppercase">Inicio</a> / <a href="#" class="text-uppercase">unete</a>
+							<a href="SesionRegistrate.jsp" class="text-uppercase">Inicio</a> / <a href="#" class="text-uppercase">Registrate</a>
 						</li>
 						<!-- /Account -->
 
