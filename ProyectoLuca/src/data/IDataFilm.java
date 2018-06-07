@@ -64,7 +64,7 @@ public interface IDataFilm {
 	 *  @throws SQLException: Excepcion que proporciona informacion de algún error con el acceso a la base de datos.
 	    */
 
-	public boolean deleteFilm(Film film) throws SQLException;
+	public boolean deleteFilm(int id) throws SQLException;
 
 	/**
 	 *  Metodo que crea una lista de las peliculas más actuales.

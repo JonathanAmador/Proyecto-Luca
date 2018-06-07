@@ -78,8 +78,8 @@ public class FilmService implements IFilmService {
 	 *  
 	 *  @throws SQLException: Excepcion que proporciona informacion de algún error con el acceso a la base de datos.
 	    */
-	public boolean deleteFilm(Film film) throws SQLException{
-		return dataFilm.deleteFilm(film);
+	public boolean deleteFilm(int id) throws SQLException{
+		return dataFilm.deleteFilm(id);
 	}
 	
 	/**

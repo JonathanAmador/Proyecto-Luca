@@ -228,9 +228,9 @@
 					<ul class="menu-list">
 						<li><a href="index.jsp">Inicio</a></li>
 						<li><a href="#">Sobre nosotros</a></li>
-						<li ><a href="#">Envio </a></li>
-							
+						<li ><a href="#">Envio </a></li>							
 						<li ><a  href="#" >Contactanos </a></li>
+						<li><a href="FilmUpdate.do?operacion=listado">Administrar</a>
 					</ul>
 				</div>
 				<!-- menu nav -->

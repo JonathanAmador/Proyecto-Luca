@@ -206,9 +206,10 @@ public class DataFilm implements IDataFilm {
 			Statement sentencia = Conexion.openStatement();
 			synchronized (sentencia) {
 				System.out.println(" Actualizando pelicula" + film);
-				sentencia.executeUpdate("UDTADE `bd_film`SET Title='" + film.getTitle() + "',Director='"
-						+ film.getDirector() + "',Synopsis='" + film.getSynopsis() + "',Price='" + film.getYear()
-						+ "',Genre='" + film.getImage() + "',Imagen='" + film.getDuration());
+				
+				sentencia.executeUpdate("UPDATE `film` SET Title='" + film.getTitle() + "',Director='"
+						+ film.getDirector() + "',Synopsis='" + film.getSynopsis() + "',Price='" + film.getPrice()
+						+ "',Genre='" + film.getGenre() + "',Image='" + film.getImage() +"',Duration='" + film.getDuration() + "' WHERE idFilm='" + film.getIdFilm() + "'");
 
 				update = true;
 			}
@@ -231,13 +232,13 @@ public class DataFilm implements IDataFilm {
 	 */
 
 	@Override
-	public boolean deleteFilm(Film film) throws SQLException {
+	public boolean deleteFilm(int id) throws SQLException {
 		boolean delete = false;
 		try {
 			Statement sentencia = Conexion.openStatement();
 			synchronized (sentencia) {
-				System.out.println("Borrando :" + film);
-				sentencia.executeUpdate("DELETE FROM  bd_film='" + film + "'");
+				System.out.println("Borrando ");
+				sentencia.executeUpdate("delete from film where idFilm ='" + id + "'");
 
 				delete = true;
 
