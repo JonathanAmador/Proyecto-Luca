@@ -81,9 +81,8 @@ public class DataFilm implements IDataFilm {
 					listFilm.add(new Film(result.getInt(1), result.getString(2), result.getString(3),
 							result.getString(4), result.getFloat(5), result.getInt(6), genre1, result.getString(8),
 							result.getString(9)));
-					System.out.println("Entra en result");
-
 				}
+				System.out.println("Devolviendo lista de peliculas");
 
 			}
 		} catch (SQLException e2) {
