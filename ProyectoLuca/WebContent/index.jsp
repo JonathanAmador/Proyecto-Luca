@@ -230,7 +230,7 @@
 						<li><a href="#">Sobre nosotros</a></li>
 						<li ><a href="#">Envio </a></li>							
 						<li ><a  href="#" >Contactanos </a></li>
-						<li><a href="FilmUpdate.do?operacion=listado">Administrar</a>
+						<li><a href="FilmUpdate.do?operacion=listado">Administrar</a></li>
 					</ul>
 				</div>
 				<!-- menu nav -->
