@@ -32,7 +32,7 @@
 						</div>
 						<!-- /footer logo -->
 
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+						<p>Movie Hunter S.L. Avenida de América 22, Madrid</p>
 
 						<!-- footer social -->
 						<ul class="footer-social">
@@ -80,7 +80,7 @@
 				<div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="footer">
 						<h3 class="footer-header">Suscr&iacute;bete</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+						<p>moviehunter@moviehunter.com</p>
 						<form>
 							<div class="form-group">
 								<input class="input" placeholder="Introduce tu correo electronico">
